@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14734B341E68E18500B6FF55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B331E68E18500B6FF55 /* AppDelegate.swift */; };
+		14734B361E68E18500B6FF55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B351E68E18500B6FF55 /* ViewController.swift */; };
+		14734B391E68E18500B6FF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14734B371E68E18500B6FF55 /* Main.storyboard */; };
+		14734B3B1E68E18500B6FF55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14734B3A1E68E18500B6FF55 /* Assets.xcassets */; };
+		14734B3E1E68E18500B6FF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14734B3C1E68E18500B6FF55 /* LaunchScreen.storyboard */; };
+		14734B491E68E18500B6FF55 /* RapBattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B481E68E18500B6FF55 /* RapBattleTests.swift */; };
+		14734B541E68E18500B6FF55 /* RapBattleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B531E68E18500B6FF55 /* RapBattleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14734B451E68E18500B6FF55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14734B281E68E18500B6FF55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14734B2F1E68E18500B6FF55;
+			remoteInfo = RapBattle;
+		};
+		14734B501E68E18500B6FF55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14734B281E68E18500B6FF55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14734B2F1E68E18500B6FF55;
+			remoteInfo = RapBattle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14734B301E68E18500B6FF55 /* RapBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14734B331E68E18500B6FF55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14734B351E68E18500B6FF55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14734B381E68E18500B6FF55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14734B3A1E68E18500B6FF55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14734B3D1E68E18500B6FF55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14734B3F1E68E18500B6FF55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14734B441E68E18500B6FF55 /* RapBattleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapBattleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14734B481E68E18500B6FF55 /* RapBattleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapBattleTests.swift; sourceTree = "<group>"; };
+		14734B4A1E68E18500B6FF55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14734B4F1E68E18500B6FF55 /* RapBattleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapBattleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14734B531E68E18500B6FF55 /* RapBattleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapBattleUITests.swift; sourceTree = "<group>"; };
+		14734B551E68E18500B6FF55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14734B2D1E68E18500B6FF55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14734B411E68E18500B6FF55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14734B4C1E68E18500B6FF55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14734B271E68E18500B6FF55 = {
+			isa = PBXGroup;
+			children = (
+				14734B321E68E18500B6FF55 /* RapBattle */,
+				14734B471E68E18500B6FF55 /* RapBattleTests */,
+				14734B521E68E18500B6FF55 /* RapBattleUITests */,
+				14734B311E68E18500B6FF55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14734B311E68E18500B6FF55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14734B301E68E18500B6FF55 /* RapBattle.app */,
+				14734B441E68E18500B6FF55 /* RapBattleTests.xctest */,
+				14734B4F1E68E18500B6FF55 /* RapBattleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14734B321E68E18500B6FF55 /* RapBattle */ = {
+			isa = PBXGroup;
+			children = (
+				14734B331E68E18500B6FF55 /* AppDelegate.swift */,
+				14734B351E68E18500B6FF55 /* ViewController.swift */,
+				14734B371E68E18500B6FF55 /* Main.storyboard */,
+				14734B3A1E68E18500B6FF55 /* Assets.xcassets */,
+				14734B3C1E68E18500B6FF55 /* LaunchScreen.storyboard */,
+				14734B3F1E68E18500B6FF55 /* Info.plist */,
+			);
+			path = RapBattle;
+			sourceTree = "<group>";
+		};
+		14734B471E68E18500B6FF55 /* RapBattleTests */ = {
+			isa = PBXGroup;
+			children = (
+				14734B481E68E18500B6FF55 /* RapBattleTests.swift */,
+				14734B4A1E68E18500B6FF55 /* Info.plist */,
+			);
+			path = RapBattleTests;
+			sourceTree = "<group>";
+		};
+		14734B521E68E18500B6FF55 /* RapBattleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14734B531E68E18500B6FF55 /* RapBattleUITests.swift */,
+				14734B551E68E18500B6FF55 /* Info.plist */,
+			);
+			path = RapBattleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14734B2F1E68E18500B6FF55 /* RapBattle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14734B581E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattle" */;
+			buildPhases = (
+				14734B2C1E68E18500B6FF55 /* Sources */,
+				14734B2D1E68E18500B6FF55 /* Frameworks */,
+				14734B2E1E68E18500B6FF55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RapBattle;
+			productName = RapBattle;
+			productReference = 14734B301E68E18500B6FF55 /* RapBattle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14734B431E68E18500B6FF55 /* RapBattleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14734B5B1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleTests" */;
+			buildPhases = (
+				14734B401E68E18500B6FF55 /* Sources */,
+				14734B411E68E18500B6FF55 /* Frameworks */,
+				14734B421E68E18500B6FF55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14734B461E68E18500B6FF55 /* PBXTargetDependency */,
+			);
+			name = RapBattleTests;
+			productName = RapBattleTests;
+			productReference = 14734B441E68E18500B6FF55 /* RapBattleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14734B4E1E68E18500B6FF55 /* RapBattleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14734B5E1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleUITests" */;
+			buildPhases = (
+				14734B4B1E68E18500B6FF55 /* Sources */,
+				14734B4C1E68E18500B6FF55 /* Frameworks */,
+				14734B4D1E68E18500B6FF55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14734B511E68E18500B6FF55 /* PBXTargetDependency */,
+			);
+			name = RapBattleUITests;
+			productName = RapBattleUITests;
+			productReference = 14734B4F1E68E18500B6FF55 /* RapBattleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14734B281E68E18500B6FF55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Deep S Randhawa";
+				TargetAttributes = {
+					14734B2F1E68E18500B6FF55 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					14734B431E68E18500B6FF55 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 14734B2F1E68E18500B6FF55;
+					};
+					14734B4E1E68E18500B6FF55 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 14734B2F1E68E18500B6FF55;
+					};
+				};
+			};
+			buildConfigurationList = 14734B2B1E68E18500B6FF55 /* Build configuration list for PBXProject "RapBattle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14734B271E68E18500B6FF55;
+			productRefGroup = 14734B311E68E18500B6FF55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14734B2F1E68E18500B6FF55 /* RapBattle */,
+				14734B431E68E18500B6FF55 /* RapBattleTests */,
+				14734B4E1E68E18500B6FF55 /* RapBattleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14734B2E1E68E18500B6FF55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14734B3E1E68E18500B6FF55 /* LaunchScreen.storyboard in Resources */,
+				14734B3B1E68E18500B6FF55 /* Assets.xcassets in Resources */,
+				14734B391E68E18500B6FF55 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14734B421E68E18500B6FF55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14734B4D1E68E18500B6FF55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14734B2C1E68E18500B6FF55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14734B361E68E18500B6FF55 /* ViewController.swift in Sources */,
+				14734B341E68E18500B6FF55 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14734B401E68E18500B6FF55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14734B491E68E18500B6FF55 /* RapBattleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14734B4B1E68E18500B6FF55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14734B541E68E18500B6FF55 /* RapBattleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14734B461E68E18500B6FF55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14734B2F1E68E18500B6FF55 /* RapBattle */;
+			targetProxy = 14734B451E68E18500B6FF55 /* PBXContainerItemProxy */;
+		};
+		14734B511E68E18500B6FF55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14734B2F1E68E18500B6FF55 /* RapBattle */;
+			targetProxy = 14734B501E68E18500B6FF55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14734B371E68E18500B6FF55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14734B381E68E18500B6FF55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14734B3C1E68E18500B6FF55 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14734B3D1E68E18500B6FF55 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14734B561E68E18500B6FF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14734B571E68E18500B6FF55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14734B591E68E18500B6FF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RapBattle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = randhawa.deep.RapBattle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		14734B5A1E68E18500B6FF55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RapBattle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = randhawa.deep.RapBattle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		14734B5C1E68E18500B6FF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RapBattleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = randhawa.deep.RapBattleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RapBattle.app/RapBattle";
+			};
+			name = Debug;
+		};
+		14734B5D1E68E18500B6FF55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RapBattleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = randhawa.deep.RapBattleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RapBattle.app/RapBattle";
+			};
+			name = Release;
+		};
+		14734B5F1E68E18500B6FF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = RapBattleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = randhawa.deep.RapBattleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = RapBattle;
+			};
+			name = Debug;
+		};
+		14734B601E68E18500B6FF55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = RapBattleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = randhawa.deep.RapBattleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = RapBattle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14734B2B1E68E18500B6FF55 /* Build configuration list for PBXProject "RapBattle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14734B561E68E18500B6FF55 /* Debug */,
+				14734B571E68E18500B6FF55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14734B581E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14734B591E68E18500B6FF55 /* Debug */,
+				14734B5A1E68E18500B6FF55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14734B5B1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14734B5C1E68E18500B6FF55 /* Debug */,
+				14734B5D1E68E18500B6FF55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		14734B5E1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14734B5F1E68E18500B6FF55 /* Debug */,
+				14734B601E68E18500B6FF55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14734B281E68E18500B6FF55 /* Project object */;
+}
