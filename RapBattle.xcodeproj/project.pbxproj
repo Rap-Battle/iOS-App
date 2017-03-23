@@ -16,6 +16,7 @@
 		14734B541E68E18500B6FF55 /* RapBattleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B531E68E18500B6FF55 /* RapBattleUITests.swift */; };
 		3407380C5C76DA2FE60F7FC6 /* Pods_RapBattle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA51A8336EE287B6ECD7FEC /* Pods_RapBattle.framework */; };
 		855327B31E8436AF0075AD12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 855327B21E8436AF0075AD12 /* GoogleService-Info.plist */; };
+		8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990C5A61E8481FC00B69F1B /* LoginViewController.swift */; };
 		8C55EF08949DBD33BAB8782F /* Pods_RapBattleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */; };
 		F5739C192D08618CC14ABD98 /* Pods_RapBattleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855327B21E8436AF0075AD12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8990C5A61E8481FC00B69F1B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D0B957621C63BF7F011EF5F1 /* Pods-RapBattleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E04EB3C8A34D5A341CF7B764 /* Pods-RapBattleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8B3474D1378771215A090B0 /* Pods-RapBattle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattle.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattle/Pods-RapBattle.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		14734B321E68E18500B6FF55 /* RapBattle */ = {
 			isa = PBXGroup;
 			children = (
+				8990C5A51E8481E400B69F1B /* ViewControllers */,
 				14734B331E68E18500B6FF55 /* AppDelegate.swift */,
 				14734B351E68E18500B6FF55 /* ViewController.swift */,
 				14734B371E68E18500B6FF55 /* Main.storyboard */,
@@ -143,6 +146,14 @@
 				14734B551E68E18500B6FF55 /* Info.plist */,
 			);
 			path = RapBattleUITests;
+			sourceTree = "<group>";
+		};
+		8990C5A51E8481E400B69F1B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8990C5A61E8481FC00B69F1B /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		BCC85B1E889D93080FC25342 /* Frameworks */ = {
@@ -450,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */,
 				14734B361E68E18500B6FF55 /* ViewController.swift in Sources */,
 				14734B341E68E18500B6FF55 /* AppDelegate.swift in Sources */,
 			);
