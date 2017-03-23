@@ -14,6 +14,10 @@
 		14734B3E1E68E18500B6FF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14734B3C1E68E18500B6FF55 /* LaunchScreen.storyboard */; };
 		14734B491E68E18500B6FF55 /* RapBattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B481E68E18500B6FF55 /* RapBattleTests.swift */; };
 		14734B541E68E18500B6FF55 /* RapBattleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14734B531E68E18500B6FF55 /* RapBattleUITests.swift */; };
+		3407380C5C76DA2FE60F7FC6 /* Pods_RapBattle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA51A8336EE287B6ECD7FEC /* Pods_RapBattle.framework */; };
+		855327B31E8436AF0075AD12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 855327B21E8436AF0075AD12 /* GoogleService-Info.plist */; };
+		8C55EF08949DBD33BAB8782F /* Pods_RapBattleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */; };
+		F5739C192D08618CC14ABD98 /* Pods_RapBattleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		028E669B501EA1C03C428BCC /* Pods-RapBattleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleUITests/Pods-RapBattleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		068AC4EE3D2C2DBF045BC430 /* Pods-RapBattle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattle/Pods-RapBattle.debug.xcconfig"; sourceTree = "<group>"; };
 		14734B301E68E18500B6FF55 /* RapBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14734B331E68E18500B6FF55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14734B351E68E18500B6FF55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,14 @@
 		14734B4F1E68E18500B6FF55 /* RapBattleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapBattleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14734B531E68E18500B6FF55 /* RapBattleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapBattleUITests.swift; sourceTree = "<group>"; };
 		14734B551E68E18500B6FF55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22C8E6A2CB7D323F0EAFA228 /* Pods-RapBattleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleUITests/Pods-RapBattleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		855327B21E8436AF0075AD12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0B957621C63BF7F011EF5F1 /* Pods-RapBattleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E04EB3C8A34D5A341CF7B764 /* Pods-RapBattleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests.release.xcconfig"; sourceTree = "<group>"; };
+		F8B3474D1378771215A090B0 /* Pods-RapBattle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattle.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattle/Pods-RapBattle.release.xcconfig"; sourceTree = "<group>"; };
+		FDA51A8336EE287B6ECD7FEC /* Pods_RapBattle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3407380C5C76DA2FE60F7FC6 /* Pods_RapBattle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5739C192D08618CC14ABD98 /* Pods_RapBattleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C55EF08949DBD33BAB8782F /* Pods_RapBattleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,8 @@
 				14734B471E68E18500B6FF55 /* RapBattleTests */,
 				14734B521E68E18500B6FF55 /* RapBattleUITests */,
 				14734B311E68E18500B6FF55 /* Products */,
+				E7EC113BBE6F00463E168448 /* Pods */,
+				BCC85B1E889D93080FC25342 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +122,7 @@
 				14734B3A1E68E18500B6FF55 /* Assets.xcassets */,
 				14734B3C1E68E18500B6FF55 /* LaunchScreen.storyboard */,
 				14734B3F1E68E18500B6FF55 /* Info.plist */,
+				855327B21E8436AF0075AD12 /* GoogleService-Info.plist */,
 			);
 			path = RapBattle;
 			sourceTree = "<group>";
@@ -125,6 +145,29 @@
 			path = RapBattleUITests;
 			sourceTree = "<group>";
 		};
+		BCC85B1E889D93080FC25342 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDA51A8336EE287B6ECD7FEC /* Pods_RapBattle.framework */,
+				4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */,
+				300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7EC113BBE6F00463E168448 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				068AC4EE3D2C2DBF045BC430 /* Pods-RapBattle.debug.xcconfig */,
+				F8B3474D1378771215A090B0 /* Pods-RapBattle.release.xcconfig */,
+				D0B957621C63BF7F011EF5F1 /* Pods-RapBattleTests.debug.xcconfig */,
+				E04EB3C8A34D5A341CF7B764 /* Pods-RapBattleTests.release.xcconfig */,
+				028E669B501EA1C03C428BCC /* Pods-RapBattleUITests.debug.xcconfig */,
+				22C8E6A2CB7D323F0EAFA228 /* Pods-RapBattleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14734B581E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattle" */;
 			buildPhases = (
+				E04DEBF8A5DEB865751319F3 /* [CP] Check Pods Manifest.lock */,
 				14734B2C1E68E18500B6FF55 /* Sources */,
 				14734B2D1E68E18500B6FF55 /* Frameworks */,
 				14734B2E1E68E18500B6FF55 /* Resources */,
+				EFA249D3E016FF8BD72779E2 /* [CP] Embed Pods Frameworks */,
+				EE51FC3C395481A15D53544B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14734B5B1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleTests" */;
 			buildPhases = (
+				9D1120D2B7BB7A81BA3F9EE5 /* [CP] Check Pods Manifest.lock */,
 				14734B401E68E18500B6FF55 /* Sources */,
 				14734B411E68E18500B6FF55 /* Frameworks */,
 				14734B421E68E18500B6FF55 /* Resources */,
+				96A4C39FC8A21A3D797873DD /* [CP] Embed Pods Frameworks */,
+				25DD2929F7668106B6FA253F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14734B5E1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleUITests" */;
 			buildPhases = (
+				C824B7FAFDB2050B3885C045 /* [CP] Check Pods Manifest.lock */,
 				14734B4B1E68E18500B6FF55 /* Sources */,
 				14734B4C1E68E18500B6FF55 /* Frameworks */,
 				14734B4D1E68E18500B6FF55 /* Resources */,
+				3F479DE98B38B9BE366C3BF9 /* [CP] Embed Pods Frameworks */,
+				39AB74EFE69D879FC37282C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +286,7 @@
 			files = (
 				14734B3E1E68E18500B6FF55 /* LaunchScreen.storyboard in Resources */,
 				14734B3B1E68E18500B6FF55 /* Assets.xcassets in Resources */,
+				855327B31E8436AF0075AD12 /* GoogleService-Info.plist in Resources */,
 				14734B391E68E18500B6FF55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +306,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25DD2929F7668106B6FA253F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39AB74EFE69D879FC37282C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapBattleUITests/Pods-RapBattleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F479DE98B38B9BE366C3BF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapBattleUITests/Pods-RapBattleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96A4C39FC8A21A3D797873DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D1120D2B7BB7A81BA3F9EE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C824B7FAFDB2050B3885C045 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E04DEBF8A5DEB865751319F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE51FC3C395481A15D53544B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapBattle/Pods-RapBattle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFA249D3E016FF8BD72779E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapBattle/Pods-RapBattle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14734B2C1E68E18500B6FF55 /* Sources */ = {
@@ -410,6 +601,7 @@
 		};
 		14734B591E68E18500B6FF55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 068AC4EE3D2C2DBF045BC430 /* Pods-RapBattle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RapBattle/Info.plist;
@@ -422,6 +614,7 @@
 		};
 		14734B5A1E68E18500B6FF55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8B3474D1378771215A090B0 /* Pods-RapBattle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RapBattle/Info.plist;
@@ -434,6 +627,7 @@
 		};
 		14734B5C1E68E18500B6FF55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B957621C63BF7F011EF5F1 /* Pods-RapBattleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,6 +642,7 @@
 		};
 		14734B5D1E68E18500B6FF55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E04EB3C8A34D5A341CF7B764 /* Pods-RapBattleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,6 +657,7 @@
 		};
 		14734B5F1E68E18500B6FF55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 028E669B501EA1C03C428BCC /* Pods-RapBattleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RapBattleUITests/Info.plist;
@@ -475,6 +671,7 @@
 		};
 		14734B601E68E18500B6FF55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22C8E6A2CB7D323F0EAFA228 /* Pods-RapBattleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RapBattleUITests/Info.plist;
@@ -505,6 +702,7 @@
 				14734B5A1E68E18500B6FF55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14734B5B1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +711,7 @@
 				14734B5D1E68E18500B6FF55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14734B5E1E68E18500B6FF55 /* Build configuration list for PBXNativeTarget "RapBattleUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +720,7 @@
 				14734B601E68E18500B6FF55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

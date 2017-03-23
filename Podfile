@@ -6,6 +6,8 @@ target 'RapBattle' do
   use_frameworks!
 
   # Pods for RapBattle
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
 
   target 'RapBattleTests' do
     inherit! :search_paths

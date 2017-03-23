@@ -1,0 +1,6 @@
+framework module Pods_RapBattleUITests {
+  umbrella header "Pods-RapBattleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
