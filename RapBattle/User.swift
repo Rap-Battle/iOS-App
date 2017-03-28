@@ -84,9 +84,9 @@ class User: NSObject {
                 "last_name"         : self.lastName!,
                 "provider_id"       : self.providerID!,
                 // "photo_url"         : self.photoURL!.absoluteString,
-                "firebase_uid"      : self.firebaseUID!,
-                "email"             : self.email!,
-                "experience_level"  : self.experienceLevel!.rawValue]
+            "firebase_uid"      : self.firebaseUID!,
+            "email"             : self.email!,
+            "experience_level"  : self.experienceLevel!.rawValue]
     }
     
 }

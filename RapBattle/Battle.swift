@@ -22,5 +22,5 @@ class Battle: NSObject {
     func addNewBar(barPath: String) {
         self.barsPaths.append(barPath)
     }
-
+    
 }
