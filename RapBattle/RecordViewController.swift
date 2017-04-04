@@ -14,6 +14,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
+    
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
@@ -31,7 +32,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         print("AUDIO: \(audioFilename)")
 //        print(audioRecorder)
         if audioRecorder == nil {
-            recordButton.isEnabled = true
+//            recordButton.isEnabled = true
             
             do {
                 try audioPlayer = AVAudioPlayer(contentsOf:
@@ -57,6 +58,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         //Done
         
         recordButton.isEnabled = false
+        
         //Record Stuff
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -70,6 +72,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                         self.recordButton.isEnabled = true
                     } else {
                         // failed to record!
+                        print("recording failed")
                     }
                 }
             }
@@ -97,10 +100,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         audioRecorder = nil
         
         if success {
-            recordButton.setTitle("Tap to Re-record", for: .normal)
+//            recordButton.setTitle("Tap to Re-record", for: .normal)
+            recordButton.setImage(UIImage(named: "record-start"), for: .normal)
         } else {
-            recordButton.setTitle("Tap to Record", for: .normal)
+//            recordButton.setTitle("Tap to Record", for: .normal)
             // recording failed :(
+            recordButton.setImage(UIImage(named: "record-start"), for: .normal)
         }
     }
     
@@ -121,7 +126,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
             audioRecorder.record()
             print("recording now")
             
-            recordButton.setTitle("Tap to Stop", for: .normal)
+//            recordButton.setTitle("Tap to Stop", for: .normal)
+            recordButton.setImage(UIImage(named: "record-finish"), for: .normal)
         } catch {
             finishRecording(success: false)
         }
