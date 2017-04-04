@@ -28,8 +28,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     @IBAction func playTapped(_ sender: Any) {
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-        
-        if audioRecorder?.isRecording == false {
+        print("AUDIO: \(audioFilename)")
+//        print(audioRecorder)
+        if audioRecorder == nil {
             recordButton.isEnabled = true
             
             do {
@@ -38,6 +39,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                 audioPlayer!.delegate = self
                 audioPlayer!.prepareToPlay()
                 audioPlayer!.play()
+                print("playing")
             } catch let error as NSError {
                 print("audioPlayer error: \(error.localizedDescription)")
             }
