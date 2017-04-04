@@ -112,19 +112,54 @@
                     <view key="view" contentMode="scaleToFill" id="Eag-Bo-5oX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhX-hp-4hC">
+                                <rect key="frame" x="0.0" y="422" width="375" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVc-Tp-8Nc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playTapped:" destination="HmI-22-7Fw" eventType="touchUpInside" id="BNH-MT-BD3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfH-o9-o6C">
+                                        <rect key="frame" x="132" y="67" width="110" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="record-start">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recordTapped:" destination="HmI-22-7Fw" eventType="touchUpInside" id="OTX-dr-F5H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.034542729932657001" green="0.5623583033285432" blue="0.63487468274111669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="sVc-Tp-8Nc" id="kri-hp-WSP"/>
+                        <outlet property="recordButton" destination="NfH-o9-o6C" id="pIe-Sc-dfm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vQ-j6-3Q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="691"/>
+            <point key="canvasLocation" x="1551.2" y="690.40479760119945"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V3m-FP-Rfa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7DT-fS-Osh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VD0-8K-JR0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VD0-8K-JR0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.24029859900474548" green="0.1919562816619873" blue="0.19149744510650635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -141,5 +176,6 @@
     </scenes>
     <resources>
         <image name="RAPBATTLE" width="180" height="26"/>
+        <image name="record-start" width="110" height="110"/>
     </resources>
 </document>
