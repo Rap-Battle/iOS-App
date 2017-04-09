@@ -10,8 +10,11 @@ import Foundation
 
 class Audio: NSObject {
     var audioUrl: String?
+    var battleId: Int?
+    
+    func downloadAudioFile(){
     
     
-    func downloadAudioFile(){} //TODO: download audio file from server
+    } //TODO: download audio file from server
     func getAudio(){} //TODO: get audio, download if needed.
 }
