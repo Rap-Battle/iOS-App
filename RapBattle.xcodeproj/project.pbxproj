@@ -22,6 +22,9 @@
 		89A953141E8B1E0500C1D3F7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */; };
 		89A953161E8B1E3300C1D3F7 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */; };
 		8C55EF08949DBD33BAB8782F /* Pods_RapBattleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */; };
+		D21ADE541E99B1D7009E8874 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21ADE531E99B1D7009E8874 /* BattleTableViewCell.swift */; };
+		D21ADE561E99B290009E8874 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21ADE551E99B290009E8874 /* Audio.swift */; };
+		D21ADE581E99BA60009E8874 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21ADE571E99BA60009E8874 /* BattleViewController.swift */; };
 		F5739C192D08618CC14ABD98 /* Pods_RapBattleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		D0B957621C63BF7F011EF5F1 /* Pods-RapBattleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D21ADE531E99B1D7009E8874 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
+		D21ADE551E99B290009E8874 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		D21ADE571E99BA60009E8874 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		E04EB3C8A34D5A341CF7B764 /* Pods-RapBattleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattleTests/Pods-RapBattleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8B3474D1378771215A090B0 /* Pods-RapBattle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapBattle.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapBattle/Pods-RapBattle.release.xcconfig"; sourceTree = "<group>"; };
 		FDA51A8336EE287B6ECD7FEC /* Pods_RapBattle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +132,7 @@
 		14734B321E68E18500B6FF55 /* RapBattle */ = {
 			isa = PBXGroup;
 			children = (
+				D21ADE521E99B1B6009E8874 /* Views */,
 				148708F11E8B181800247E7B /* Models */,
 				8990C5A51E8481E400B69F1B /* ViewControllers */,
 				14734B331E68E18500B6FF55 /* AppDelegate.swift */,
@@ -162,6 +169,7 @@
 			children = (
 				148708F21E8B183500247E7B /* User.swift */,
 				148708F41E8B185B00247E7B /* Battle.swift */,
+				D21ADE551E99B290009E8874 /* Audio.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 				8990C5A61E8481FC00B69F1B /* LoginViewController.swift */,
 				89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */,
 				89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */,
+				D21ADE571E99BA60009E8874 /* BattleViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +193,14 @@
 				300C23C3FE504A414E4504C4 /* Pods_RapBattleUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D21ADE521E99B1B6009E8874 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D21ADE531E99B1D7009E8874 /* BattleTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E7EC113BBE6F00463E168448 /* Pods */ = {
@@ -482,9 +499,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21ADE561E99B290009E8874 /* Audio.swift in Sources */,
 				148708F31E8B183500247E7B /* User.swift in Sources */,
 				8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */,
 				14734B361E68E18500B6FF55 /* ViewController.swift in Sources */,
+				D21ADE581E99BA60009E8874 /* BattleViewController.swift in Sources */,
+				D21ADE541E99B1D7009E8874 /* BattleTableViewCell.swift in Sources */,
 				89A953141E8B1E0500C1D3F7 /* RecordViewController.swift in Sources */,
 				89A953161E8B1E3300C1D3F7 /* TimelineViewController.swift in Sources */,
 				148708F51E8B185B00247E7B /* Battle.swift in Sources */,

@@ -10,17 +10,10 @@ import UIKit
 
 class Battle: NSObject {
     
-    let user1: User?
-    let user2: User?
-    var barsPaths: [String] = []
+    var battleId: Int?
+    var opponentBattle: Battle?
+    var userId: User?
+    var audio: Audio?
     
-    init(user1: User, user2: User) {
-        self.user1 = user1
-        self.user2 = user2
-    }
-    
-    func addNewBar(barPath: String) {
-        self.barsPaths.append(barPath)
-    }
     
 }
