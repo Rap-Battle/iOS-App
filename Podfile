@@ -8,7 +8,8 @@ target 'RapBattle' do
   # Pods for RapBattle
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
-
+	pod 'Firebase/Storage'
+	pod 'Firebase/Database'
   target 'RapBattleTests' do
     inherit! :search_paths
     # Pods for testing

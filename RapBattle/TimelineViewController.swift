@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class TimelineViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var battlesTableView: UITableView!
-    var battles: [Battle] = []
+    
+    var battles = Dictionary<String, AnyObject>()
+    let battlesRef = FIRDatabase.database().reference().child("battles")
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return battles.count
@@ -18,9 +21,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = battlesTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
-        let battle = battles[indexPath.row]
+       // let battle = battles[indexPath.row]
         
-        cell.initializeWith(battle: battle)
+      //  cell.initializeWith(battle: battle)
         return cell
     }
     
@@ -28,6 +31,15 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
     private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let cell = battlesTableView.cellForRow(at: indexPath)
         performSegue(withIdentifier: "BattleViewControllerSegue", sender: cell)
+    }
+    
+    private func getBattles() {
+        _ = battlesRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            self.battles = snapshot.value as? [String : AnyObject] ?? [:]
+            //listner for change in data
+            //reload data here
+            print(self.battles)
+        })
     }
     
     override func viewDidLoad() {
@@ -39,6 +51,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         titleImageView.image = UIImage(named: "RAPBATTLE")
         self.navigationItem.titleView = titleImageView
         //Done
+        
+        //Get json of battles from firebase
+        getBattles()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

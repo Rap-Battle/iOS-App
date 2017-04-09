@@ -9,26 +9,35 @@
 import UIKit
 import Firebase
 
-class User: NSObject {
+class User {
     
-    let username: String?
-    let firstName: String?
-    let lastName: String?
-    let providerID: String?
+    let username = ""
+    let firstName = ""
+    let lastName = ""
+    let providerID = ""
     // let photoURL: URL?
-    let firebaseUID: String?
-    let email: String?
-    let experienceLevel: Experience?
+    let firebaseUID = ""
+    var email = ""
+    /*let experienceLevel: Experience?
     
     enum Experience: String {
         case Beginner       = "Beginner"
         case Intermediate   = "Intermediate"
         case Advanced       = "Advanced"
-    }
+    }*/
     
     private static let _userDefaultsKey: String = "RapBattleCurrentUser"
-    private static var _currentUser: User?
-    static var currentUser: User? {
+    
+    //create singleton user object
+    static let currentUser = User()
+    private init() {}
+    
+    func convertEmailToId() -> String {
+        let periodIndex = self.email.characters.index(of: ".")!
+        return String(self.email.characters.prefix(upTo: periodIndex))
+    }
+    //private static var _currentUser: User?
+    /*static var currentUser: User? {
         get {
             if (_currentUser == nil) {
                 if FIRAuth.auth()?.currentUser != nil {
@@ -54,9 +63,9 @@ class User: NSObject {
             }
             defaults.synchronize()
         }
-    }
+    }*/
     
-    private init(userData dict: Dictionary<String, Any>) {
+  /*  private init(userData dict: Dictionary<String, Any>) {
         self.username = dict["username"] as! String?
         self.firstName = dict["first_name"] as! String?
         self.lastName = dict["last_name"] as! String?
@@ -65,9 +74,9 @@ class User: NSObject {
         self.firebaseUID = dict["firebase_uid"] as! String?
         self.email = dict["email"] as! String?
         self.experienceLevel = Experience.init(rawValue: (dict["experience_level"] as! String?)!)
-    }
+    }*/
     
-    init(userInfo: FIRUserInfo, firstName: String, lastName: String, experienceLevel: Experience) {
+   /* init(userInfo: FIRUserInfo, firstName: String, lastName: String, experienceLevel: Experience) {
         self.username = userInfo.displayName
         self.firstName = firstName
         self.lastName = lastName
@@ -77,16 +86,16 @@ class User: NSObject {
         self.email = userInfo.email
         self.experienceLevel = experienceLevel
     }
-    
+    */
     private func getUserDataAsDict() -> [String: Any] {
-        return ["username"          : self.username!,
-                "first_name"        : self.firstName!,
-                "last_name"         : self.lastName!,
-                "provider_id"       : self.providerID!,
+        return ["username"          : self.username,
+                "first_name"        : self.firstName,
+                "last_name"         : self.lastName,
+                "provider_id"       : self.providerID,
                 // "photo_url"         : self.photoURL!.absoluteString,
-            "firebase_uid"      : self.firebaseUID!,
-            "email"             : self.email!,
-            "experience_level"  : self.experienceLevel!.rawValue]
+            "firebase_uid"      : self.firebaseUID,
+            "email"             : self.email]
+            //"experience_level"  : self.experienceLevel!.rawValue]
     }
     
 }

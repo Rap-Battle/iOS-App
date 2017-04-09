@@ -8,12 +8,17 @@
 
 import UIKit
 
-class Battle: NSObject {
+class Battle {
     
-    var battleId: Int?
+    var battleId: String?
     var opponentBattle: Battle?
-    var userId: User?
-    var audio: Audio?
+    var userId: String?
+    var audioFielUrl: String?
     
+    func getBattleDic() -> [String: Any] {
+        return [    "userId"    : self.userId!,
+                "audioFileUrl"  : self.audioFielUrl!]
+    }
+
     
 }

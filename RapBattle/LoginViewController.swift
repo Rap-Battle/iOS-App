@@ -14,8 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var email_field: UITextField!
     @IBOutlet weak var password_field: UITextField!
-    
-    
+
     @IBAction func login(_ sender: Any) {
         let email = email_field.text!
         let password = password_field.text!
@@ -26,6 +25,9 @@ class LoginViewController: UIViewController {
             }
             else {
                 print("SignedIn Successful")
+                User.currentUser.email = email
+                self.performSegue(withIdentifier: "signedInSegue", sender: nil)
+
             }
         }
     }
@@ -42,6 +44,8 @@ class LoginViewController: UIViewController {
             }
             else {
                 print("Created User!")
+                User.currentUser.email = email
+                self.performSegue(withIdentifier: "signedInSegue", sender: nil)
             }
         }
     }
