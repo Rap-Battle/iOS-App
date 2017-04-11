@@ -13,7 +13,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var battlesTableView: UITableView!
     
     var battles = Dictionary<String, AnyObject>()
-    let battlesRef = FIRDatabase.database().reference().child("battles")
+    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return battles.count
@@ -33,15 +33,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         performSegue(withIdentifier: "BattleViewControllerSegue", sender: cell)
     }
     
-    private func getBattles() {
-        _ = battlesRef.observe(FIRDataEventType.value, with: { (snapshot) in
-            self.battles = snapshot.value as? [String : AnyObject] ?? [:]
-            //listner for change in data
-            //reload data here
-            print(self.battles)
-        })
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         battlesTableView.dataSource = self
@@ -53,7 +44,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         //Done
         
         //Get json of battles from firebase
-        getBattles()
+        FirebaseClient.currentDB.bindTable { (battles: [String : AnyObject]) in
+            print(battles)
+        }
         
         
     }

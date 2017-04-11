@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class FirebaseClient {
     let battleFirRef = FIRDatabase.database().reference()
-    
+    let battlesRef = FIRDatabase.database().reference().child("battles")
     static let currentDB = FirebaseClient()
     private init() {}
     
@@ -41,6 +41,14 @@ class FirebaseClient {
                 self.battleFirRef.child("battles").child(newBattle.battleId!).setValue(newBattle.getBattleDic())
             }
         }
+    }
+    
+    func bindTable(observer: @escaping (_ battles: [String : AnyObject]) -> Void){
+        _ = battlesRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            observer(snapshot.value as? [String : AnyObject] ?? [:])
+            
+        })
     }
     private func getCurrentDateTime() -> String {
         let date = Date()
