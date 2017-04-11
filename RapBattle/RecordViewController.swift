@@ -55,7 +55,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     @IBAction func didTapPost(_ sender: UIButton) {
         let audioFileUrl = getDocumentsDirectory().appendingPathComponent("recording.m4a")
 //        print("AUDIO: \(audioFilename)")
-        
+
         if audioRecorder == nil && didRecord{
             didRecord = false
             
@@ -82,8 +82,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                     self.battleFirRef.child("battles").child(newBattle.battleId!).setValue(newBattle.getBattleDic())
                 }
             }
-            
-            //Post it on firebase
             
         }
     }
