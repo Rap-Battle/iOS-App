@@ -59,42 +59,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         if audioRecorder == nil && didRecord{
             didRecord = false
             
-            let fileName = NSUUID().uuidString + ".m4a"
+            FirebaseClient.currentDB.postAudioFile(with: audioFileUrl)
             
-            FIRStorage.storage().reference().child("rap_audio").child(fileName).putFile(audioFileUrl, metadata: nil) { (metadata, error) in
-                if error != nil {
-                    print(error ?? "error")
-                }
-                
-                if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-                    print(downloadUrl)
-                    //let values: [String : Any] = ["audioUrl": downloadUrl]
-                   // self.sendMessageWith(properties: values)
-                    
-                    //Create a new battle object
-                    
-                    let newBattle = Battle()
-                    newBattle.battleId = "\((User.currentUser.convertEmailToId())) \(self.getCurrentDateTime())"
-                    newBattle.audioFielUrl = downloadUrl
-                    newBattle.userId = User.currentUser.email
-                    
-                    //Upload to firebase
-                    self.battleFirRef.child("battles").child(newBattle.battleId!).setValue(newBattle.getBattleDic())
-                }
-            }
             
         }
     }
     
-    private func getCurrentDateTime() -> String {
-        let date = Date()
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        
-        return "\(day) \(hour) \(minutes)"
-    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         

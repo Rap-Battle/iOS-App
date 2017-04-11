@@ -14,9 +14,9 @@ class User {
     let username = ""
     let firstName = ""
     let lastName = ""
-    let providerID = ""
+    //let providerID = ""
     // let photoURL: URL?
-    let firebaseUID = ""
+    //let firebaseUID = ""
     var email = ""
     /*let experienceLevel: Experience?
     
@@ -91,9 +91,9 @@ class User {
         return ["username"          : self.username,
                 "first_name"        : self.firstName,
                 "last_name"         : self.lastName,
-                "provider_id"       : self.providerID,
+              //  "provider_id"       : self.providerID,
                 // "photo_url"         : self.photoURL!.absoluteString,
-            "firebase_uid"      : self.firebaseUID,
+            //"firebase_uid"      : self.firebaseUID,
             "email"             : self.email]
             //"experience_level"  : self.experienceLevel!.rawValue]
     }
