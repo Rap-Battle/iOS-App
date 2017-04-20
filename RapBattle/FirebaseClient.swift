@@ -34,7 +34,7 @@ class FirebaseClient {
                 
                 let newBattle = Battle()
                 newBattle.battleId = "\((User.currentUser.convertEmailToId())) \(self.getCurrentDateTime())"
-                newBattle.audioFielUrl = downloadUrl
+                newBattle.audioFileURL = downloadUrl
                 newBattle.userId = User.currentUser.email
                 
                 //Upload to firebase

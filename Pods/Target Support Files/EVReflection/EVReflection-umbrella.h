@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RapBattleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RapBattleVersionString[];
+FOUNDATION_EXPORT double EVReflectionVersionNumber;
+FOUNDATION_EXPORT const unsigned char EVReflectionVersionString[];
 

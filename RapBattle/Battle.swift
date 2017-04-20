@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import EVReflection
 
-class Battle {
+class Battle: EVObject {
     
-    var battleId: String?
-    var opponentBattle: Battle?
-    var userId: String?
-    var audioFielUrl: String?
+    var organizer: User             // User which created this battle
+    var cyphers: [Audio] = []       // Replies to this battle, including the original cypher
+    var battleID: String            // Unique URL/ID in Firebase
     
-    func getBattleDic() -> [String: Any] {
-        return [    "userId"    : self.userId!,
-                "audioFileUrl"  : self.audioFielUrl!]
+    required init() {
+        self.organizer = User.currentUser
+        self.battleID = UUID().uuidString
     }
-
     
+    func addCyperToBattle(new cypher: Audio) {
+        self.cyphers.append(cypher)
+    }
+    
+    func getBattleAsJSONString() -> String {
+        return self.toJsonString()
+    }
 }
