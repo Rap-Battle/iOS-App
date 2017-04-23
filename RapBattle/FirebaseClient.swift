@@ -34,11 +34,9 @@ class FirebaseClient {
         return audioFile
     }
     
-    func bindTable(observer: @escaping (_ battles: [String : AnyObject]) -> Void){
-                _ = battleFirebaseReference.observe(FIRDataEventType.value, with: { (snapshot) in
-        
-                    observer(snapshot.value as? [String : AnyObject] ?? [:])
-        
-                })
-            }
+    func bindTimelineWithTableView(observer: @escaping (_ battles: Dictionary<String, String>) -> Void) {
+        battleFirebaseReference.observe(FIRDataEventType.value, with: { (snapshot) in
+            observer(snapshot.value as? Dictionary<String, String> ?? [:])
+        })
+    }
 }

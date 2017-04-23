@@ -26,13 +26,15 @@ class Audio: EVObject {
         self.firebaseAudioURL = URL.init(string: "\(self.audioID).m4a")!
     }
     
-    required init() {
-        fatalError("init() has not been implemented")
+    required convenience init() {
+        self.init(localAudioURL: URL.init(string: "")!, userID: User.currentUser)
     }
     
     override public func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
         return [(keyInObject: "formatter", keyInResource: nil)]
     }
+    
+    
     
     private func downloadAudioFile() -> Audio? {
         // TODO - Downloads the audiofile to the device
