@@ -54,14 +54,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     @IBAction func didTapPost(_ sender: UIButton) {
         let audioFileUrl = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-//        print("AUDIO: \(audioFilename)")
 
-        if audioRecorder == nil && didRecord{
+        if audioRecorder == nil && didRecord {
             didRecord = false
             
-            FirebaseClient.currentDB.postAudioFile(with: audioFileUrl)
-            
-            
+            let audioFile = FirebaseClient.currentDB.createNewAudioFileOnFirebase(with: audioFileUrl)
+            FirebaseClient.currentDB.createNewBattle(with: audioFile)
         }
     }
     

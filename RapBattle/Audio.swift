@@ -6,15 +6,43 @@
 //  Copyright © 2017 Deep S Randhawa. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import EVReflection
 
-class Audio: NSObject {
-    var audioUrl: String?
-    var battleId: Int?
+class Audio: EVObject {
+    private let formatter = DateFormatter()
     
-    func downloadAudioFile(){
+    var localAudioURL: URL          // A link to the audio file on device
+    var firebaseAudioURL: URL       // A link to the audio file in Firebase
+    var audioID: String             // A unique ID for this file
+    var userID: User                // User that created this file
+    var createdAt: Date             // Timestamp
+    
+    init(localAudioURL: URL, userID: User) {
+        self.localAudioURL = localAudioURL
+        self.userID = userID
+        self.createdAt = Date()
+        self.audioID = UUID().uuidString
+        self.firebaseAudioURL = URL.init(string: "\(self.audioID).m4a")!
+    }
+    
+    required convenience init() {
+        self.init(localAudioURL: URL.init(string: "")!, userID: User.currentUser)
+    }
+    
+    override public func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
+        return [(keyInObject: "formatter", keyInResource: nil)]
+    }
     
     
-    } //TODO: download audio file from server
-    func getAudio(){} //TODO: get audio, download if needed.
+    
+    private func downloadAudioFile() -> Audio? {
+        // TODO - Downloads the audiofile to the device
+        return nil
+    }
+    
+    func getAudioFile() -> Audio? {
+        // TODO - Returns the audio file, downloads it if necessary
+        return nil
+    }
 }

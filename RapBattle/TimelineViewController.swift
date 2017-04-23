@@ -12,8 +12,7 @@ import FirebaseDatabase
 class TimelineViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var battlesTableView: UITableView!
     
-    var battles = Dictionary<String, AnyObject>()
-    
+    var battles: [Battle] = []
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return battles.count
@@ -36,18 +35,18 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         battlesTableView.dataSource = self
-        //Set image as title
         let titleImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 0,height: 15))
         titleImageView.contentMode = .scaleAspectFit
         titleImageView.image = UIImage(named: "RAPBATTLE")
         self.navigationItem.titleView = titleImageView
-        //Done
         
-        //Get json of battles from firebase
-        FirebaseClient.currentDB.bindTable { (battles: [String : AnyObject]) in
-            print(battles)
+        // Get json of battles from firebase
+        FirebaseClient.currentDB.bindTimelineWithTableView { (battles) in
+            for (_, v) in battles {
+                // TODO: Convert string v to Battle object and then update the table view
+                print(v)
+            }
         }
-        
         
     }
 

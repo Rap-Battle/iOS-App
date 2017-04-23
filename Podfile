@@ -6,10 +6,16 @@ target 'RapBattle' do
   use_frameworks!
 
   # Pods for RapBattle
-	pod 'Firebase/Core'
-	pod 'Firebase/Auth'
-	pod 'Firebase/Storage'
-	pod 'Firebase/Database'
+  
+  # Firebase Pods
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  
+  # Others
+  pod 'EVReflection'
+  
   target 'RapBattleTests' do
     inherit! :search_paths
     # Pods for testing
