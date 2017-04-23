@@ -11,22 +11,18 @@ import UIKit
 class Audio {
     private let formatter = DateFormatter()
     
-    var privateAudioURL: String?    // A link to the audio file on device
-    var firebaseAudioURL: String    // A link to the audio file in Firebase
+    var localAudioURL: URL          // A link to the audio file on device
+    var firebaseAudioURL: URL       // A link to the audio file in Firebase
     var audioID: String             // A unique ID for this file
     var userID: User                // User that created this file
     var createdAt: Date             // Timestamp
     
-    init(privateAudioURL: String, firebaseAudioURL: String, userID: User) {
-        self.privateAudioURL = privateAudioURL
-        self.firebaseAudioURL = firebaseAudioURL
-        self.audioID = UUID().uuidString
+    init(localAudioURL: URL, userID: User) {
+        self.localAudioURL = localAudioURL
         self.userID = userID
         self.createdAt = Date()
-    }
-    
-    convenience init(firebaseAudioURL: String, userID: User) {
-        self.init(privateAudioURL: "", firebaseAudioURL: firebaseAudioURL, userID: userID)
+        self.audioID = UUID().uuidString
+        self.firebaseAudioURL = URL.init(string: "\(self.audioID).m4a")!
     }
     
     private func downloadAudioFile() -> Audio? {

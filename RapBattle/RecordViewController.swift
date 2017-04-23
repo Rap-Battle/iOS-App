@@ -59,7 +59,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         if audioRecorder == nil && didRecord{
             didRecord = false
             
-            FirebaseClient.currentDB.postAudioFile(with: audioFileUrl)
+            FirebaseClient.currentDB.createNewAudioFileOnFirebase(with: audioFileUrl)
             
             
         }
