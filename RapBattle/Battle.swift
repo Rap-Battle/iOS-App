@@ -23,8 +23,4 @@ class Battle: EVObject {
     func addCyperToBattle(new cypher: Audio) {
         self.cyphers.append(cypher)
     }
-    
-    func getBattleAsJSONString() -> String {
-        return self.toJsonString()
-    }
 }
