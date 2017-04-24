@@ -18,7 +18,7 @@ class FirebaseClient {
     func createNewBattle(with audioFile: Audio) -> Battle {
         let battle = Battle.init()
         battle.addCyperToBattle(new: audioFile)
-        battleFirebaseReference.child(battle.battleID).setValue(battle.toJsonString())
+        battleFirebaseReference.child(battle.battleID!).setValue(battle.toJsonString())
         return battle
     }
     
@@ -34,9 +34,32 @@ class FirebaseClient {
         return audioFile
     }
     
-    func bindTimelineWithTableView(observer: @escaping (_ battles: Dictionary<String, String>) -> Void) {
+    func bindTimelineWithTableView(observer: @escaping (_ battles: Dictionary<String, NSDictionary>) -> Void) {
         battleFirebaseReference.observe(FIRDataEventType.value, with: { (snapshot) in
-            observer(snapshot.value as? Dictionary<String, String> ?? [:])
+            if let mainDict = snapshot.value as? Dictionary<String, String>{
+                var resultDict = Dictionary<String, NSDictionary>()
+                
+                for (battleIdString, battleJson) in mainDict {
+                    var dictionary:NSDictionary?
+                    
+                    if let data = battleJson.data(using: String.Encoding.utf8) {
+                        
+                        do {
+                            dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+                            if let dictionary = dictionary {
+                                resultDict[battleIdString] = dictionary
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                    }
+                }
+                observer(resultDict)
+                
+            } else {
+                observer([:])
+            }
+            
         })
     }
     

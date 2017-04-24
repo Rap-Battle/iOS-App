@@ -29,6 +29,10 @@ class Audio: EVObject {
     required convenience init() {
         self.init(localAudioURL: URL.init(string: "")!, userID: User.currentUser)
     }
+    convenience init(json: NSDictionary){
+        self.init()
+        
+    }
     
     override public func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
         return [(keyInObject: "formatter", keyInResource: nil), (keyInObject: "localAudioURL", keyInResource: nil)]

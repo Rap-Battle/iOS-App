@@ -11,31 +11,32 @@ import Firebase
 
 class User {
     
-    let username = ""
-    let firstName = ""
-    let lastName = ""
-    //let providerID = ""
-    // let photoURL: URL?
-    //let firebaseUID = ""
-    var email = ""
-    /*let experienceLevel: Experience?
-    
-    enum Experience: String {
-        case Beginner       = "Beginner"
-        case Intermediate   = "Intermediate"
-        case Advanced       = "Advanced"
-    }*/
-    
+    var username:String?
+    var email: String?
+
     private static let _userDefaultsKey: String = "RapBattleCurrentUser"
     
     //create singleton user object
     static let currentUser = User()
-    private init() {}
-    
     func convertEmailToId() -> String {
-        let periodIndex = self.email.characters.index(of: ".")!
-        return String(self.email.characters.prefix(upTo: periodIndex))
+        let periodIndex = self.email!.characters.index(of: ".")!
+        return String(self.email!.characters.prefix(upTo: periodIndex))
     }
+    
+    convenience init(json: NSDictionary){
+        self.init()
+        
+    }
+    /*private func getUserDataAsDict() -> [String: Any] {
+        return ["username"          : self.username,
+                "first_name"        : self.firstName,
+                "last_name"         : self.lastName,
+                //  "provider_id"       : self.providerID,
+            // "photo_url"         : self.photoURL!.absoluteString,
+            //"firebase_uid"      : self.firebaseUID,
+            "email"             : self.email]
+        //"experience_level"  : self.experienceLevel!.rawValue]
+    }*/
     //private static var _currentUser: User?
     /*static var currentUser: User? {
         get {
@@ -87,15 +88,6 @@ class User {
         self.experienceLevel = experienceLevel
     }
     */
-    private func getUserDataAsDict() -> [String: Any] {
-        return ["username"          : self.username,
-                "first_name"        : self.firstName,
-                "last_name"         : self.lastName,
-              //  "provider_id"       : self.providerID,
-                // "photo_url"         : self.photoURL!.absoluteString,
-            //"firebase_uid"      : self.firebaseUID,
-            "email"             : self.email]
-            //"experience_level"  : self.experienceLevel!.rawValue]
-    }
+    
     
 }
