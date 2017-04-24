@@ -44,8 +44,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         FirebaseClient.currentDB.bindTimelineWithTableView { (battles) in
             var fetchedBattles = [Battle]()
             for (_, v) in battles {
-                let oneBattle = Battle(json: v)
-                fetchedBattles.append(oneBattle)
+                // let oneBattle = Battle(json: v)
+                // fetchedBattles.append(oneBattle)
             }
             self.battles = fetchedBattles
             self.battlesTableView.reloadData()

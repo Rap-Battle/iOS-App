@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import EVReflection
 
-class Audio: EVObject {
+class Audio {
     private let formatter = DateFormatter()
     
     var localAudioURL: URL          // A link to the audio file on device
@@ -26,15 +25,10 @@ class Audio: EVObject {
         self.firebaseAudioURL = URL.init(string: "\(self.audioID).m4a")!
     }
     
-    required convenience init() {
-        self.init(localAudioURL: URL.init(string: "")!, userID: User.currentUser)
-    }
-    convenience init(json: NSDictionary){
-        self.init()
-        
-    }
-    
-    override public func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
-        return [(keyInObject: "formatter", keyInResource: nil), (keyInObject: "localAudioURL", keyInResource: nil)]
+    func getAsDictionary() -> [String: Any] {
+        return ["localAudioURL"     : localAudioURL.absoluteString,
+                "firebaseAudioURL"  : firebaseAudioURL.absoluteString,
+                "audioID"           : audioID,
+                "userEmail"            : userID.email!]
     }
 }

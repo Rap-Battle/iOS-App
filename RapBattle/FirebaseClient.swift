@@ -18,7 +18,7 @@ class FirebaseClient {
     func createNewBattle(with audioFile: Audio) -> Battle {
         let battle = Battle.init()
         battle.addCyperToBattle(new: audioFile)
-        battleFirebaseReference.child(battle.battleID!).setValue(battle.toJsonString())
+        battleFirebaseReference.child(battle.battleID!).setValue(battle.getAsDictionary())
         return battle
     }
     
