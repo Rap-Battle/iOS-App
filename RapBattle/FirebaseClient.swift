@@ -39,4 +39,23 @@ class FirebaseClient {
             observer(snapshot.value as? Dictionary<String, String> ?? [:])
         })
     }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    // Returns the local URL of the audio file
+    func downloadAudioFiles(file: Audio) -> URL {
+        let fileFirebaseRef = rapAudioStorageReference.child(file.firebaseAudioURL.absoluteString)
+        let fileLocalRef = getDocumentsDirectory().appendingPathComponent("\(file.audioID).m4a")
+        
+        fileFirebaseRef.write(toFile: fileLocalRef) { (url, error) in
+            if let error = error {
+                print("Error: \(error)")
+            }
+        }
+        return fileLocalRef
+    }
 }

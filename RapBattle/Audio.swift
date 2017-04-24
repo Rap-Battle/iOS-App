@@ -31,18 +31,6 @@ class Audio: EVObject {
     }
     
     override public func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
-        return [(keyInObject: "formatter", keyInResource: nil)]
-    }
-    
-    
-    
-    private func downloadAudioFile() -> Audio? {
-        // TODO - Downloads the audiofile to the device
-        return nil
-    }
-    
-    func getAudioFile() -> Audio? {
-        // TODO - Returns the audio file, downloads it if necessary
-        return nil
+        return [(keyInObject: "formatter", keyInResource: nil), (keyInObject: "localAudioURL", keyInResource: nil)]
     }
 }
