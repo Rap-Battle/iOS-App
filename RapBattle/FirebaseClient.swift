@@ -23,8 +23,8 @@ class FirebaseClient {
     }
     
     func createNewAudioFileOnFirebase(with localAudioFilePath: URL) -> Audio {
-        let audioFile = Audio(localAudioURL: localAudioFilePath, userID: User.currentUser)
-        rapAudioStorageReference.child("\(audioFile.firebaseAudioURL)").putFile(audioFile.localAudioURL, metadata: nil) { (metadata, error) in
+        let audioFile = Audio(localAudioURL: localAudioFilePath, user: User.currentUser)
+        rapAudioStorageReference.child("\(audioFile.firebaseAudioURL)").putFile(audioFile.localAudioURL!, metadata: nil) { (metadata, error) in
             if error != nil {
                 print(error ?? "Error while uploading")
             } else {
@@ -34,9 +34,10 @@ class FirebaseClient {
         return audioFile
     }
     
-    func bindTimelineWithTableView(observer: @escaping (_ battles: Dictionary<String, String>) -> Void) {
+    func bindTimelineWithTableView(observer: @escaping (_ battles: NSDictionary) -> Void) {
         battleFirebaseReference.observe(FIRDataEventType.value, with: { (snapshot) in
-            observer(snapshot.value as? Dictionary<String, String> ?? [:])
+            print(snapshot.value)
+            observer(snapshot.value as? NSDictionary ?? [:])
         })
     }
     
@@ -48,7 +49,7 @@ class FirebaseClient {
     
     // Returns the local URL of the audio file
     func downloadAudioFiles(file: Audio) -> URL {
-        let fileFirebaseRef = rapAudioStorageReference.child(file.firebaseAudioURL.absoluteString)
+        let fileFirebaseRef = rapAudioStorageReference.child((file.firebaseAudioURL?.absoluteString)!)
         let fileLocalRef = getDocumentsDirectory().appendingPathComponent("\(file.audioID).m4a")
         
         fileFirebaseRef.write(toFile: fileLocalRef) { (url, error) in

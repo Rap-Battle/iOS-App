@@ -25,10 +25,21 @@ class Battle {
         self.cyphers.append(cypher)
     }
     
+    convenience init(json: NSDictionary){
+        self.init()
+        battleID = json["battleID"] as? String
+        organizer = User(json: json["organizer"] as? NSDictionary)
+        let fetchedCyphers = json["cyphers"] as! NSDictionary
+        
+        for (_, audioJson) in fetchedCyphers {
+            let oneAudio = Audio(json: audioJson as! NSDictionary)
+            cyphers.append(oneAudio)
+        }
+    }
     func getAsDictionary() -> [String: Any] {
         var dict = Dictionary<String, Any>()
         
-        dict["organizerUsername"]     = organizer?.username
+        dict["organizer"]     = organizer!.getAsDictionary()
         dict["battleID"]              = battleID
         var cypherDict = Dictionary<String, Any>()
         for audioFile in cyphers {

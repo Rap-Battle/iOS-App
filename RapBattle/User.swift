@@ -11,22 +11,27 @@ import Firebase
 
 class User {
     
-    var username:String?
+    //var username:String?
     var email: String?
 
     private static let _userDefaultsKey: String = "RapBattleCurrentUser"
     
     //create singleton user object
     static let currentUser = User()
+    
     func convertEmailToId() -> String {
         let periodIndex = self.email!.characters.index(of: ".")!
         return String(self.email!.characters.prefix(upTo: periodIndex))
     }
     
-    convenience init(json: NSDictionary){
+    convenience init(json: NSDictionary?){
         self.init()
-        
+        email = json?["email"] as? String
     }
+    func getAsDictionary() -> Dictionary<String, Any> {
+        return ["email": self.email!]
+    }
+    
     /*private func getUserDataAsDict() -> [String: Any] {
         return ["username"          : self.username,
                 "first_name"        : self.firstName,
