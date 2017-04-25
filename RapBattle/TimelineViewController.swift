@@ -13,16 +13,14 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var battlesTableView: UITableView!
     
     var battles: [Battle] = []
-    
+    // MARK: - Table View
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return battles.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = battlesTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
-       // let battle = battles[indexPath.row]
-        
-      //  cell.initializeWith(battle: battle)
+        cell.initializeWith(battle: battles[indexPath.row])
         return cell
     }
     
@@ -52,13 +50,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     
     // MARK: - Navigation
 

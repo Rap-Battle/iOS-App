@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -159,12 +159,6 @@
                                                         <constraint firstAttribute="trailing" secondItem="PKt-aj-6mW" secondAttribute="trailing" constant="4" id="ppu-pk-i4S"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="response to @alivepool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eW-gZ-J3D">
-                                                    <rect key="frame" x="86" y="33" width="151" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="YFP-A4-aPh" secondAttribute="trailing" constant="8" id="0xm-Z0-qjZ"/>
@@ -178,16 +172,13 @@
                                                 <constraint firstItem="Ngi-OP-EFk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y5b-wj-oOS" secondAttribute="trailing" constant="5" id="Ujo-Zw-t0Z"/>
                                                 <constraint firstItem="tZI-sW-aui" firstAttribute="leading" secondItem="CdD-8p-4Vx" secondAttribute="trailing" id="ZkO-lV-JBk"/>
                                                 <constraint firstItem="y5b-wj-oOS" firstAttribute="top" secondItem="xQx-po-IA5" secondAttribute="top" constant="8" id="baf-Hh-ibd"/>
-                                                <constraint firstItem="1eW-gZ-J3D" firstAttribute="leading" secondItem="CdD-8p-4Vx" secondAttribute="trailing" constant="8" id="c2v-QC-gqA"/>
                                                 <constraint firstAttribute="trailing" secondItem="tZI-sW-aui" secondAttribute="trailing" id="egp-Zd-WiV"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ngi-OP-EFk" secondAttribute="trailing" constant="8" id="fNe-q9-aga"/>
                                                 <constraint firstItem="CdD-8p-4Vx" firstAttribute="top" secondItem="xQx-po-IA5" secondAttribute="top" constant="8" id="k6P-M7-t7h"/>
-                                                <constraint firstItem="1eW-gZ-J3D" firstAttribute="top" secondItem="y5b-wj-oOS" secondAttribute="bottom" constant="4" id="pTy-Un-Eb8"/>
                                                 <constraint firstItem="Ngi-OP-EFk" firstAttribute="top" secondItem="xQx-po-IA5" secondAttribute="top" constant="8" id="wgK-8S-isK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="opponentNameLabel" destination="1eW-gZ-J3D" id="Eot-Im-lot"/>
                                             <outlet property="playingSliderView" destination="HCE-3W-RxL" id="dpD-H4-76j"/>
                                             <outlet property="remainingTimeLabel" destination="PKt-aj-6mW" id="Kam-0H-dCe"/>
                                             <outlet property="userImageView" destination="CdD-8p-4Vx" id="5jP-Ub-r5H"/>

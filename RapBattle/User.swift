@@ -19,7 +19,7 @@ class User {
     //create singleton user object
     static let currentUser = User()
     
-    func convertEmailToId() -> String {
+    func getUsername() -> String {
         let periodIndex = self.email!.characters.index(of: ".")!
         return String(self.email!.characters.prefix(upTo: periodIndex))
     }

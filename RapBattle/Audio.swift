@@ -11,8 +11,8 @@ import UIKit
 class Audio {
     private let formatter = DateFormatter()
     
-    var localAudioURL: URL?         // A link to the audio file on device
-    var firebaseAudioURL: URL?
+    private var localAudioURL: URL?         // A link to the audio file on device
+    var firebaseFileName: String?
     var audioID: String?             // A unique ID for this file
     var user: User?                // User that created this file
     var createdAt: Date?             // Timestamp
@@ -23,16 +23,14 @@ class Audio {
         self.user = user
         self.createdAt = Date()
         self.audioID = UUID().uuidString
-        self.firebaseAudioURL = URL.init(string: "\(self.audioID).m4a")!
+        self.firebaseFileName = "\(self.audioID!).m4a"
     }
     
     convenience init(json: NSDictionary){
         self.init()
         audioID = json["audioID"] as? String
         
-        if let firebaseUrlString = json["firebaseAudioURL"] as? String {
-            firebaseAudioURL = URL(fileURLWithPath: firebaseUrlString)
-        }
+        firebaseFileName = json["firebaseFileName"] as? String
         
         if let localUrlString = json["localAudioURL"] as? String {
             localAudioURL = URL(fileURLWithPath: localUrlString)
@@ -41,10 +39,27 @@ class Audio {
         user = User(json: json["recorder"] as? NSDictionary)
         
     }
-    
+    func getLocalAudioURL(completion: @escaping (URL) -> (), failure: @escaping (Error) -> ()) {
+        if localAudioURL == nil {
+            download(completion: { 
+                completion(self.localAudioURL!)
+            }, failure: { (error: Error) in
+                failure(error)
+            })
+        } else {
+            completion(self.localAudioURL!)
+        }
+    }
+    func download(completion: @escaping () -> (), failure: @escaping (Error) -> ()){
+        FirebaseClient.currentDB.downloadAudioFiles(file: self, completion: { (localUrl: URL) in
+            self.localAudioURL = localUrl
+            completion()
+        }) { (error: Error) in
+            failure(error)
+        }
+    }
     func getAsDictionary() -> [String: Any] {
-        return ["localAudioURL"     : localAudioURL!.absoluteString,
-                "firebaseAudioURL"  : firebaseAudioURL!.absoluteString,
+        return ["firebaseFileName"  : firebaseFileName!,
                 "audioID"           : audioID!,
                 "recorder"            : user!.getAsDictionary()]
     }
