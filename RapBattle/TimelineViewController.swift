@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class TimelineViewController: UIViewController, UITableViewDataSource {
+class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var battlesTableView: UITableView!
     
     var battles: [Battle] = []
@@ -24,8 +24,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    
-    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = battlesTableView.cellForRow(at: indexPath)
         performSegue(withIdentifier: "BattleViewControllerSegue", sender: cell)
     }
@@ -33,6 +32,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         battlesTableView.dataSource = self
+        battlesTableView.delegate = self
         let titleImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 0,height: 15))
         titleImageView.contentMode = .scaleAspectFit
         titleImageView.image = UIImage(named: "RAPBATTLE")

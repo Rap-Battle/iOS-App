@@ -15,8 +15,8 @@ class FirebaseClient {
     let rapAudioStorageReference = FIRStorage.storage().reference().child("rap_audio")
     static let currentDB = FirebaseClient()
     
-    func createNewBattle(with audioFile: Audio) -> Battle {
-        let battle = Battle()
+    func createNewReply(with audioFile: Audio, battleRepliedTo: Battle?) -> Battle {
+        let battle = battleRepliedTo ?? Battle()
         battle.addCyperToBattle(new: audioFile)
         battleFirebaseReference.child(battle.battleID!).setValue(battle.getAsDictionary())
         return battle

@@ -22,6 +22,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     var audioPlayer: AVAudioPlayer!
     var didRecord = false
     let battleFirRef = FIRDatabase.database().reference()
+    var battleRepliedTo: Battle? = nil
 
     
     @IBAction func recordTapped(_ sender: Any) {
@@ -59,7 +60,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
             didRecord = false
             
             let audioFile = FirebaseClient.currentDB.createNewAudioFileOnFirebase(with: audioFileUrl)
-            FirebaseClient.currentDB.createNewBattle(with: audioFile)
+
+            FirebaseClient.currentDB.createNewReply(with: audioFile, battleRepliedTo: battleRepliedTo)
         }
     }
     
