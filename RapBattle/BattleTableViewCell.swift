@@ -13,12 +13,15 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     var battle: Battle?
     
     var audioPlayer: AVAudioPlayer!
+    var delegate: BattleToRecordDelegate?
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBAction func onBattle(_ sender: UIButton) {
+        delegate?.toRecord(battle: battle!)
     }
+    
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var playingSliderView: UISlider!
     
@@ -39,6 +42,8 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
             print("audioPlayer error: \(error.localizedDescription)")
         })
         
+    }
+    @IBAction func onReplyToBattle(_ sender: Any) {
     }
 
     func initializeWith(battle: Battle){

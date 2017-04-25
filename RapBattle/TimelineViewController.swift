@@ -9,7 +9,15 @@
 import UIKit
 import FirebaseDatabase
 
-class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol BattleToRecordDelegate {
+    func toRecord(battle: Battle)
+}
+
+class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BattleToRecordDelegate {
+    func toRecord(battle: Battle) {
+        performSegue(withIdentifier: "ReplySegue", sender: battle)
+    }
+
     @IBOutlet weak var battlesTableView: UITableView!
     
     var battles: [Battle] = []
@@ -21,6 +29,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = battlesTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
         cell.initializeWith(battle: battles[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -57,6 +66,13 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "ReplySegue" {
+                let vc = segue.destination as! RecordViewController
+                vc.battleRepliedTo = sender as! Battle
+                return
+            }
+        }
         if let battleViewController = segue.destination as? BattleViewController {
             if let cell = sender as? BattleTableViewCell {
                 battleViewController.battle = cell.battle
