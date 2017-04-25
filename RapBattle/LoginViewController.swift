@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
+                CRNotifications.showNotification(type: .error, title: "Error", message: "Something went wrong with login!", dismissDelay: 3)
             }
             else {
                 print("SignedIn Successful")
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController {
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
+                 CRNotifications.showNotification(type: .error, title: "Error", message: error.localizedDescription, dismissDelay: 3)
                 print(error.localizedDescription)
             }
             else {

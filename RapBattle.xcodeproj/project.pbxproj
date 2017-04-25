@@ -19,6 +19,10 @@
 		3407380C5C76DA2FE60F7FC6 /* Pods_RapBattle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA51A8336EE287B6ECD7FEC /* Pods_RapBattle.framework */; };
 		855327B31E8436AF0075AD12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 855327B21E8436AF0075AD12 /* GoogleService-Info.plist */; };
 		85C6887D1E9D95A3009E8F7D /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6887C1E9D95A3009E8F7D /* FirebaseClient.swift */; };
+		890940FC1EB007AF009327CD /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890940FB1EB007AF009327CD /* CRNotificationsMedia.xcassets */; };
+		890941001EB007B9009327CD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890940FD1EB007B9009327CD /* Colors.swift */; };
+		890941011EB007B9009327CD /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890940FE1EB007B9009327CD /* CRNotification.swift */; };
+		890941021EB007B9009327CD /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890940FF1EB007B9009327CD /* CRNotifications.swift */; };
 		8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990C5A61E8481FC00B69F1B /* LoginViewController.swift */; };
 		89A953141E8B1E0500C1D3F7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */; };
 		89A953161E8B1E3300C1D3F7 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */; };
@@ -69,6 +73,10 @@
 		4FCBD501DEE2448C747CBC20 /* Pods_RapBattleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapBattleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855327B21E8436AF0075AD12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85C6887C1E9D95A3009E8F7D /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		890940FB1EB007AF009327CD /* CRNotificationsMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = CRNotificationsMedia.xcassets; path = CRNotifications/Assets/CRNotificationsMedia.xcassets; sourceTree = "<group>"; };
+		890940FD1EB007B9009327CD /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = CRNotifications/Classes/Colors.swift; sourceTree = "<group>"; };
+		890940FE1EB007B9009327CD /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CRNotification.swift; path = CRNotifications/Classes/CRNotification.swift; sourceTree = "<group>"; };
+		890940FF1EB007B9009327CD /* CRNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CRNotifications.swift; path = CRNotifications/Classes/CRNotifications.swift; sourceTree = "<group>"; };
 		8990C5A61E8481FC00B69F1B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 		14734B321E68E18500B6FF55 /* RapBattle */ = {
 			isa = PBXGroup;
 			children = (
+				890940F81EB00766009327CD /* CRNotifications */,
 				D21ADE521E99B1B6009E8874 /* Views */,
 				148708F11E8B181800247E7B /* Models */,
 				8990C5A51E8481E400B69F1B /* ViewControllers */,
@@ -175,6 +184,33 @@
 				85C6887C1E9D95A3009E8F7D /* FirebaseClient.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		890940F81EB00766009327CD /* CRNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				890940FA1EB0077A009327CD /* Assets */,
+				890940F91EB00772009327CD /* Classes */,
+			);
+			name = CRNotifications;
+			sourceTree = "<group>";
+		};
+		890940F91EB00772009327CD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				890940FD1EB007B9009327CD /* Colors.swift */,
+				890940FE1EB007B9009327CD /* CRNotification.swift */,
+				890940FF1EB007B9009327CD /* CRNotifications.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		890940FA1EB0077A009327CD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				890940FB1EB007AF009327CD /* CRNotificationsMedia.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		8990C5A51E8481E400B69F1B /* ViewControllers */ = {
@@ -337,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14734B3E1E68E18500B6FF55 /* LaunchScreen.storyboard in Resources */,
+				890940FC1EB007AF009327CD /* CRNotificationsMedia.xcassets in Resources */,
 				14734B3B1E68E18500B6FF55 /* Assets.xcassets in Resources */,
 				855327B31E8436AF0075AD12 /* GoogleService-Info.plist in Resources */,
 				14734B391E68E18500B6FF55 /* Main.storyboard in Resources */,
@@ -503,11 +540,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21ADE561E99B290009E8874 /* Audio.swift in Sources */,
+				890941001EB007B9009327CD /* Colors.swift in Sources */,
 				148708F31E8B183500247E7B /* User.swift in Sources */,
 				8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */,
 				14734B361E68E18500B6FF55 /* ViewController.swift in Sources */,
 				D21ADE581E99BA60009E8874 /* BattleViewController.swift in Sources */,
 				D21ADE541E99B1D7009E8874 /* BattleTableViewCell.swift in Sources */,
+				890941021EB007B9009327CD /* CRNotifications.swift in Sources */,
+				890941011EB007B9009327CD /* CRNotification.swift in Sources */,
 				89A953141E8B1E0500C1D3F7 /* RecordViewController.swift in Sources */,
 				85C6887D1E9D95A3009E8F7D /* FirebaseClient.swift in Sources */,
 				89A953161E8B1E3300C1D3F7 /* TimelineViewController.swift in Sources */,
