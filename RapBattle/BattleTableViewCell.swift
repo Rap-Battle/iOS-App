@@ -9,8 +9,11 @@
 import UIKit
 import AVFoundation
 
-class BattleTableViewCell: UITableViewCell {
+class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     var battle: Battle?
+    
+    var audioPlayer: AVAudioPlayer!
+    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -18,15 +21,16 @@ class BattleTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var playingSliderView: UISlider!
+    
     @IBAction func onPlay(_ sender: UIButton) {
         let audio = battle!.cyphers[0]!
         audio.getLocalAudioURL(completion: { (localUrl: URL) in
-            var audioPlayer: AVAudioPlayer?
             do {
-                audioPlayer = try AVAudioPlayer(contentsOf:
+                self.audioPlayer = try AVAudioPlayer(contentsOf:
                     (localUrl))
-                audioPlayer!.prepareToPlay()
-                audioPlayer!.play()
+                self.audioPlayer.delegate = self
+                self.audioPlayer!.prepareToPlay()
+                self.audioPlayer!.play()
                 print("playing")
             } catch let error as NSError {
                 print("audioPlayer error: \(error.localizedDescription)")
