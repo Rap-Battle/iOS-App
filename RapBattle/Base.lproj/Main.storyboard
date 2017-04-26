@@ -107,6 +107,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BattleTableViewCell" rowHeight="132" id="vv7-R1-6Cb" customClass="BattleTableViewCell" customModule="RapBattle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="132"/>
@@ -117,7 +118,18 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZI-sW-aui">
                                                     <rect key="frame" x="78" y="0.0" width="297" height="131.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngi-OP-EFk">
+                                                            <rect key="frame" x="210" y="8" width="79" height="29"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="battle"/>
+                                                            <connections>
+                                                                <action selector="onBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="Xia-l8-27g"/>
+                                                                <action selector="onReplyToBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="HZ9-cH-Ycv"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <gestureRecognizers/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-8p-4Vx">
@@ -131,17 +143,9 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@deadpool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-wj-oOS">
                                                     <rect key="frame" x="86" y="8" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngi-OP-EFk">
-                                                    <rect key="frame" x="322" y="8" width="45" height="30"/>
-                                                    <state key="normal" title="Battle!"/>
-                                                    <connections>
-                                                        <action selector="onBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="Xia-l8-27g"/>
-                                                        <action selector="onReplyToBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="HZ9-cH-Ycv"/>
-                                                    </connections>
-                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFP-A4-aPh">
                                                     <rect key="frame" x="8" y="86" width="359" height="37"/>
                                                     <subviews>
@@ -151,18 +155,20 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKt-aj-6mW">
                                                             <rect key="frame" x="328" y="11" width="27" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtG-M6-bHz">
                                                             <rect key="frame" x="0.0" y="8" width="30" height="21"/>
-                                                            <state key="normal" title="play"/>
+                                                            <state key="normal" title="play">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="onPlay:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="Fox-Oo-3Kw"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="HCE-3W-RxL" firstAttribute="centerY" secondItem="NtG-M6-bHz" secondAttribute="centerY" id="Gty-yJ-lZG"/>
                                                         <constraint firstAttribute="bottom" secondItem="NtG-M6-bHz" secondAttribute="bottom" constant="8" id="Hgr-KP-E7v"/>
@@ -175,6 +181,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="YFP-A4-aPh" secondAttribute="trailing" constant="8" id="0xm-Z0-qjZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="YFP-A4-aPh" secondAttribute="bottom" constant="8" id="2LX-FN-DYA"/>
@@ -184,13 +191,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="tZI-sW-aui" secondAttribute="bottom" id="J3V-7t-lhI"/>
                                                 <constraint firstItem="y5b-wj-oOS" firstAttribute="leading" secondItem="CdD-8p-4Vx" secondAttribute="trailing" constant="8" id="Nn0-x0-N4e"/>
                                                 <constraint firstItem="YFP-A4-aPh" firstAttribute="top" secondItem="CdD-8p-4Vx" secondAttribute="bottom" constant="8" id="OnF-8O-Fvp"/>
-                                                <constraint firstItem="Ngi-OP-EFk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y5b-wj-oOS" secondAttribute="trailing" constant="5" id="Ujo-Zw-t0Z"/>
                                                 <constraint firstItem="tZI-sW-aui" firstAttribute="leading" secondItem="CdD-8p-4Vx" secondAttribute="trailing" id="ZkO-lV-JBk"/>
                                                 <constraint firstItem="y5b-wj-oOS" firstAttribute="top" secondItem="xQx-po-IA5" secondAttribute="top" constant="8" id="baf-Hh-ibd"/>
                                                 <constraint firstAttribute="trailing" secondItem="tZI-sW-aui" secondAttribute="trailing" id="egp-Zd-WiV"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ngi-OP-EFk" secondAttribute="trailing" constant="8" id="fNe-q9-aga"/>
                                                 <constraint firstItem="CdD-8p-4Vx" firstAttribute="top" secondItem="xQx-po-IA5" secondAttribute="top" constant="8" id="k6P-M7-t7h"/>
-                                                <constraint firstItem="Ngi-OP-EFk" firstAttribute="top" secondItem="xQx-po-IA5" secondAttribute="top" constant="8" id="wgK-8S-isK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -203,7 +207,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.28421175479888916" green="0.32565832138061523" blue="0.49569272994995117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qr1-ID-60x">
                         <barButtonItem key="rightBarButtonItem" title="New" id="JGW-qU-97F">
@@ -311,16 +315,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vQ-j6-3Q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589.5999999999999" y="777.66116941529242"/>
+            <point key="canvasLocation" x="1817" y="906"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V3m-FP-Rfa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7DT-fS-Osh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VD0-8K-JR0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VD0-8K-JR0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.20392156862745098" green="0.14117647058823529" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -335,6 +340,7 @@
     </scenes>
     <resources>
         <image name="background" width="396" height="654"/>
+        <image name="battle" width="231" height="87"/>
         <image name="logo" width="605" height="210"/>
         <image name="play_btn" width="231" height="87"/>
         <image name="post_btn" width="231" height="87"/>
