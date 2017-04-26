@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
 
         let email = email_field.text!
         let password = password_field.text!
+        let name = name_field.text!
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
@@ -48,6 +49,8 @@ class LoginViewController: UIViewController {
             }
             else {
                 print("Created User!")
+                User.currentUser.email = email
+                User.currentUser.name = name
                 FirebaseClient.currentDB.createNewUser()
                 self.performSegue(withIdentifier: "signedInSegue", sender: nil)
             }
