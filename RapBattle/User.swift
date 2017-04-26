@@ -13,6 +13,7 @@ class User {
     
     //var username:String?
     var email: String?
+    var name : String?
 
     private static let _userDefaultsKey: String = "RapBattleCurrentUser"
     
@@ -24,11 +25,17 @@ class User {
         return String(self.email!.characters.prefix(upTo: periodIndex))
     }
     
+    func getName() -> String {
+        return name!
+    }
+    
     convenience init(json: NSDictionary?){
         self.init()
         email = json?["email"] as? String
+        name = json?["name"] as? String
     }
     func getAsDictionary() -> Dictionary<String, Any> {
-        return ["email": self.email!]
+        return ["email": self.email!,
+                "name" : self.name!]
     }
 }

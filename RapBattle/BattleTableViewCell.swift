@@ -48,7 +48,7 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
 
     func initializeWith(battle: Battle){
         self.battle = battle
-        usernameLabel.text = battle.organizer!.getUsername()
+        usernameLabel.text = battle.organizer!.getName()
     }
     override func awakeFromNib() {
         super.awakeFromNib()

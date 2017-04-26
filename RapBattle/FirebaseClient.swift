@@ -11,9 +11,16 @@ import FirebaseStorage
 import FirebaseDatabase
 
 class FirebaseClient {
+    let usersFirebaseReference = FIRDatabase.database().reference().child("Users")
     let battleFirebaseReference = FIRDatabase.database().reference().child("battles")
     let rapAudioStorageReference = FIRStorage.storage().reference().child("rap_audio")
     static let currentDB = FirebaseClient()
+    
+    func createNewUser(){
+        let userId = User.currentUser.getUsername()
+        let userName = User.currentUser.getName()
+        usersFirebaseReference.child(userId).setValue(userName)
+    }
     
     func createNewReply(with audioFile: Audio, battleRepliedTo: Battle?) -> Battle {
         let battle = battleRepliedTo ?? Battle()

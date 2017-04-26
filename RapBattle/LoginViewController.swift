@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var email_field: UITextField!
     @IBOutlet weak var password_field: UITextField!
+    @IBOutlet weak var name_field: UITextField!
 
     @IBAction func login(_ sender: Any) {
         let email = email_field.text!
@@ -46,7 +48,7 @@ class LoginViewController: UIViewController {
             }
             else {
                 print("Created User!")
-                User.currentUser.email = email
+                FirebaseClient.currentDB.createNewUser()
                 self.performSegue(withIdentifier: "signedInSegue", sender: nil)
             }
         }
@@ -54,21 +56,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let borderColor = UIColor(red: 0, green: 150, blue: 0, alpha: 1)
-        
-        email_field.attributedPlaceholder = NSAttributedString(string: "Email", attributes:[NSForegroundColorAttributeName: UIColor.gray])
-        password_field.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSForegroundColorAttributeName: UIColor.gray])
-        
-        
-        email_field.layer.borderColor = borderColor.cgColor
-        email_field.layer.cornerRadius = 5
-        email_field.layer.masksToBounds = true
-        email_field.layer.borderWidth = 1.0
-        
-        password_field.layer.borderColor = borderColor.cgColor
-        password_field.layer.cornerRadius = 5
-        password_field.layer.masksToBounds = true
-        password_field.layer.borderWidth = 1.0
+//        let borderColor = UIColor(red: 0, green: 150, blue: 0, alpha: 1)
+//        
+//        email_field.attributedPlaceholder = NSAttributedString(string: "Email", attributes:[NSForegroundColorAttributeName: UIColor.gray])
+//        password_field.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSForegroundColorAttributeName: UIColor.gray])
+//        
+//        
+//        email_field.layer.borderColor = borderColor.cgColor
+//        email_field.layer.cornerRadius = 5
+//        email_field.layer.masksToBounds = true
+//        email_field.layer.borderWidth = 1.0
+//        
+//        password_field.layer.borderColor = borderColor.cgColor
+//        password_field.layer.cornerRadius = 5
+//        password_field.layer.masksToBounds = true
+//        password_field.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {
