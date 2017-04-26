@@ -23,6 +23,11 @@
 		890941001EB007B9009327CD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890940FD1EB007B9009327CD /* Colors.swift */; };
 		890941011EB007B9009327CD /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890940FE1EB007B9009327CD /* CRNotification.swift */; };
 		890941021EB007B9009327CD /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890940FF1EB007B9009327CD /* CRNotifications.swift */; };
+		890941091EB07C6B009327CD /* BPCircleActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890941041EB07C6B009327CD /* BPCircleActivityIndicator.swift */; };
+		8909410A1EB07C6B009327CD /* CircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890941051EB07C6B009327CD /* CircleLayer.swift */; };
+		8909410B1EB07C6B009327CD /* CircleLotateLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890941061EB07C6B009327CD /* CircleLotateLayer.swift */; };
+		8909410C1EB07C6B009327CD /* CircleLotationSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890941071EB07C6B009327CD /* CircleLotationSet.swift */; };
+		8909410D1EB07C6B009327CD /* CommonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890941081EB07C6B009327CD /* CommonAnimation.swift */; };
 		8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990C5A61E8481FC00B69F1B /* LoginViewController.swift */; };
 		89A953141E8B1E0500C1D3F7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */; };
 		89A953161E8B1E3300C1D3F7 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */; };
@@ -77,6 +82,11 @@
 		890940FD1EB007B9009327CD /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = CRNotifications/Classes/Colors.swift; sourceTree = "<group>"; };
 		890940FE1EB007B9009327CD /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CRNotification.swift; path = CRNotifications/Classes/CRNotification.swift; sourceTree = "<group>"; };
 		890940FF1EB007B9009327CD /* CRNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CRNotifications.swift; path = CRNotifications/Classes/CRNotifications.swift; sourceTree = "<group>"; };
+		890941041EB07C6B009327CD /* BPCircleActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BPCircleActivityIndicator.swift; path = BPAnimator/BPCircleActivityIndicator.swift; sourceTree = "<group>"; };
+		890941051EB07C6B009327CD /* CircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleLayer.swift; path = BPAnimator/CircleLayer.swift; sourceTree = "<group>"; };
+		890941061EB07C6B009327CD /* CircleLotateLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleLotateLayer.swift; path = BPAnimator/CircleLotateLayer.swift; sourceTree = "<group>"; };
+		890941071EB07C6B009327CD /* CircleLotationSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleLotationSet.swift; path = BPAnimator/CircleLotationSet.swift; sourceTree = "<group>"; };
+		890941081EB07C6B009327CD /* CommonAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonAnimation.swift; path = BPAnimator/CommonAnimation.swift; sourceTree = "<group>"; };
 		8990C5A61E8481FC00B69F1B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		89A953131E8B1E0500C1D3F7 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		89A953151E8B1E3300C1D3F7 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +152,7 @@
 		14734B321E68E18500B6FF55 /* RapBattle */ = {
 			isa = PBXGroup;
 			children = (
+				890941031EB07C58009327CD /* BPAnimator */,
 				890940F81EB00766009327CD /* CRNotifications */,
 				D21ADE521E99B1B6009E8874 /* Views */,
 				148708F11E8B181800247E7B /* Models */,
@@ -211,6 +222,18 @@
 				890940FB1EB007AF009327CD /* CRNotificationsMedia.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		890941031EB07C58009327CD /* BPAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				890941041EB07C6B009327CD /* BPCircleActivityIndicator.swift */,
+				890941051EB07C6B009327CD /* CircleLayer.swift */,
+				890941061EB07C6B009327CD /* CircleLotateLayer.swift */,
+				890941071EB07C6B009327CD /* CircleLotationSet.swift */,
+				890941081EB07C6B009327CD /* CommonAnimation.swift */,
+			);
+			name = BPAnimator;
 			sourceTree = "<group>";
 		};
 		8990C5A51E8481E400B69F1B /* ViewControllers */ = {
@@ -540,17 +563,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21ADE561E99B290009E8874 /* Audio.swift in Sources */,
+				8909410B1EB07C6B009327CD /* CircleLotateLayer.swift in Sources */,
 				890941001EB007B9009327CD /* Colors.swift in Sources */,
 				148708F31E8B183500247E7B /* User.swift in Sources */,
 				8990C5A71E8481FC00B69F1B /* LoginViewController.swift in Sources */,
 				14734B361E68E18500B6FF55 /* ViewController.swift in Sources */,
 				D21ADE581E99BA60009E8874 /* BattleViewController.swift in Sources */,
 				D21ADE541E99B1D7009E8874 /* BattleTableViewCell.swift in Sources */,
+				8909410C1EB07C6B009327CD /* CircleLotationSet.swift in Sources */,
 				890941021EB007B9009327CD /* CRNotifications.swift in Sources */,
+				8909410D1EB07C6B009327CD /* CommonAnimation.swift in Sources */,
 				890941011EB007B9009327CD /* CRNotification.swift in Sources */,
 				89A953141E8B1E0500C1D3F7 /* RecordViewController.swift in Sources */,
 				85C6887D1E9D95A3009E8F7D /* FirebaseClient.swift in Sources */,
+				8909410A1EB07C6B009327CD /* CircleLayer.swift in Sources */,
 				89A953161E8B1E3300C1D3F7 /* TimelineViewController.swift in Sources */,
+				890941091EB07C6B009327CD /* BPCircleActivityIndicator.swift in Sources */,
 				148708F51E8B185B00247E7B /* Battle.swift in Sources */,
 				14734B341E68E18500B6FF55 /* AppDelegate.swift in Sources */,
 			);

@@ -14,6 +14,10 @@ import FirebaseDatabase
 class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     
+    @IBOutlet weak var circleAnimate2: BPCircleActivityIndicator!
+    @IBOutlet weak var circleAnimate1: BPCircleActivityIndicator!
+    @IBOutlet weak var circleAnimate: BPCircleActivityIndicator!
+    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     
@@ -41,6 +45,10 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
 //            recordButton.isEnabled = true
             
             do {
+                circleAnimate.animate()
+                circleAnimate1.animate()
+                circleAnimate2.animate()
+                
                 try audioPlayer = AVAudioPlayer(contentsOf:
                     (audioFilename))
                 audioPlayer!.delegate = self
@@ -51,6 +59,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                 print("audioPlayer error: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        circleAnimate.stop()
+        circleAnimate1.stop()
+        circleAnimate2.stop()
     }
     
     @IBAction func didTapPost(_ sender: UIButton) {
