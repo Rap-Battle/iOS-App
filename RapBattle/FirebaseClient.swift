@@ -19,7 +19,7 @@ class FirebaseClient {
     func createNewUser(){
         let userId = User.currentUser.getUsername()
         let userName = User.currentUser.getName()
-        usersFirebaseReference.child(userId).setValue(userName)
+        usersFirebaseReference.child(userId).child("name").setValue(userName)
     }
     
     func createNewReply(with audioFile: Audio, battleRepliedTo: Battle?) -> Battle {
