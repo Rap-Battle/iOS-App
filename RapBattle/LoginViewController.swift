@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var email_field: UITextField!
     @IBOutlet weak var password_field: UITextField!
-    @IBOutlet weak var name_field: UITextField!
+ 
 
     @IBAction func login(_ sender: Any) {
         let email = email_field.text!
@@ -35,27 +35,31 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func signup(_ sender: Any) {
-       
-
-        let email = email_field.text!
-        let password = password_field.text!
-        let name = name_field.text!
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-            if let error = error {
-                 CRNotifications.showNotification(type: .error, title: "Error", message: error.localizedDescription, dismissDelay: 3)
-                print(error.localizedDescription)
-            }
-            else {
-                print("Created User!")
-                User.currentUser.email = email
-                User.currentUser.name = name
-                FirebaseClient.currentDB.createNewUser()
-                self.performSegue(withIdentifier: "signedInSegue", sender: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "registerSegue" {
+                let vc = segue.destination as! RegisterViewController
+                vc.email = email_field.text!
+                vc.password = password_field.text!
+                return
             }
         }
+        
     }
+    
+//    @IBAction func signup(_ sender: Any) {
+//       
+//
+//        let email = email_field.text!
+//        let password = password_field.text!
+//     //   let name = name_field.text!
+//        
+//      
+//       // self.performSegue(withIdentifier: "signedInSegue", sender: nil)
+//        
+//        
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

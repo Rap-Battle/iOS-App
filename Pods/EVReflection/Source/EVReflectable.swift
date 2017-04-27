@@ -8,6 +8,11 @@
 
 import Foundation
 
+// Protocol that can be used for sub objects to define that parsing will be done in the parent using the 'setValue forKey' function
+public protocol EVCustomReflectable {
+    func constructWith(value: Any?)
+    func toCodableValue() -> Any
+}
 
 // MARK: - Protocol with the overridable functions. All functionality is added to this in the extension below.
 public protocol EVReflectable: class, NSObjectProtocol  {
@@ -63,7 +68,14 @@ public protocol EVReflectable: class, NSObjectProtocol  {
      - returns: The specific type
      */
     func getSpecificType(_ dict: NSDictionary) -> EVReflectable?
-
+    
+    /**
+     Return a custom object for the object
+     
+     - returns: The custom object that will be parsed (single value, dictionary or array)
+     */
+    func customConverter() -> AnyObject?
+    
     /**
      Declaration for Equatable ==
      
@@ -123,7 +135,7 @@ extension EVReflectable where Self: NSObject {
      */
     public init(dictionary: NSDictionary, conversionOptions: ConversionOptions = .DefaultDeserialize, forKeyPath: String? = nil) {
         self.init()
-        EVReflection.setPropertiesfromDictionary(dictionary, anyObject: self, conversionOptions: conversionOptions)
+        EVReflection.setPropertiesfromDictionary(dictionary, anyObject: self, conversionOptions: conversionOptions, forKeyPath: forKeyPath)
     }
     
     /**
@@ -135,7 +147,7 @@ extension EVReflectable where Self: NSObject {
     public init(json: String?, conversionOptions: ConversionOptions = .DefaultDeserialize, forKeyPath: String? = nil) {
         self.init()
         let jsonDict = EVReflection.dictionaryFromJson(json)
-        EVReflection.setPropertiesfromDictionary(jsonDict, anyObject: self, conversionOptions: conversionOptions)
+        EVReflection.setPropertiesfromDictionary(jsonDict, anyObject: self, conversionOptions: conversionOptions, forKeyPath: forKeyPath)
     }
     
     /**
@@ -147,7 +159,7 @@ extension EVReflectable where Self: NSObject {
     public init(data: Data, conversionOptions: ConversionOptions = .DefaultDeserialize, forKeyPath: String? = nil) {
         self.init()
         let dictionary: NSDictionary = (((try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary))  ?? NSDictionary())!
-        EVReflection.setPropertiesfromDictionary(dictionary, anyObject: self, conversionOptions: conversionOptions)
+        EVReflection.setPropertiesfromDictionary(dictionary, anyObject: self, conversionOptions: conversionOptions, forKeyPath: forKeyPath)
     }
     
     
@@ -297,6 +309,15 @@ extension EVReflectable {
         return false
     }
     
+    /**
+     Return a custom object for the object
+     
+     - returns: The custom object that will be parsed (single value, dictionary or array)
+     */
+    public func customConverter() -> AnyObject? {
+        return nil
+    }
+
     /**
      Get the type of this object
      

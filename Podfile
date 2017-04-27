@@ -15,6 +15,8 @@ target 'RapBattle' do
   
   # Others
   pod 'EVReflection'
+  pod 'ALCameraViewController'
+  pod 'AFNetworking'
   
   target 'RapBattleTests' do
     inherit! :search_paths

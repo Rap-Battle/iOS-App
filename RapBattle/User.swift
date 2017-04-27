@@ -14,6 +14,7 @@ class User {
     //var username:String?
     var email: String?
     var name : String?
+    var imageUrl : URL?
 
     private static let _userDefaultsKey: String = "RapBattleCurrentUser"
     
