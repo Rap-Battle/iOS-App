@@ -45,7 +45,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = battlesTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
         cell.initializeWith(battle: battles[indexPath.row])
-        cell.numVotes.text = "\(battles[indexPath.row].cyphers[0]?.getNumVotes())"
+        cell.numVotes.text = "\((battles[indexPath.row].cyphers[0]?.getNumVotes())!)"
         cell.delegate = self
         return cell
     }
