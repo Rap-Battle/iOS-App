@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
-import AFNet
+
 
 protocol BattleToRecordDelegate {
     func toRecord(battle: Battle)
