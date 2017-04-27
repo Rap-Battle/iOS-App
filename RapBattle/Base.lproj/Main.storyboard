@@ -131,6 +131,21 @@
                                                                 <action selector="onReplyToBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="HZ9-cH-Ycv"/>
                                                             </connections>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-H0-AOZ">
+                                                            <rect key="frame" x="258" y="53" width="25" height="25"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" backgroundImage="ic_arrow_upward_white"/>
+                                                            <connections>
+                                                                <action selector="upvoteButtonPressed:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="NAN-n0-UXs"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-40-p1h">
+                                                            <rect key="frame" x="239" y="55" width="11" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <gestureRecognizers/>
@@ -180,6 +195,7 @@
                                             <color key="backgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="numVotes" destination="Sh5-40-p1h" id="Nal-c7-OiF"/>
                                             <outlet property="playingProgressView" destination="fIe-1n-JGN" id="CA9-Dh-V0K"/>
                                             <outlet property="remainingTimeLabel" destination="PKt-aj-6mW" id="Kam-0H-dCe"/>
                                             <outlet property="userImageView" destination="CdD-8p-4Vx" id="5jP-Ub-r5H"/>
@@ -212,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouo-G2-hZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="690"/>
+            <point key="canvasLocation" x="693.60000000000002" y="689.5052473763119"/>
         </scene>
         <!--Battle View Controller-->
         <scene sceneID="qv7-4Y-N7D">
@@ -501,6 +517,7 @@
         <image name="Triangle" width="58" height="65"/>
         <image name="background" width="396" height="654"/>
         <image name="battle" width="231" height="87"/>
+        <image name="ic_arrow_upward_white" width="24" height="24"/>
         <image name="logo" width="496" height="88"/>
         <image name="play_btn" width="231" height="87"/>
         <image name="post_btn" width="231" height="87"/>

@@ -32,6 +32,7 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         battle?.cyphers[0]?.addVoter(user: User.currentUser)
         // audioDelegate?.upvoteAudio(audio: (battle?.cyphers[0])!)
         FirebaseClient.currentDB.updateBattle(battle: battle!)
+        numVotes.text = "\(Int(numVotes.text!)! + 1)"
         print("upvoted cypherID")
     }
     
