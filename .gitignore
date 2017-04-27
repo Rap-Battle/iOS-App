@@ -8,9 +8,6 @@ DerivedData/
 Pods/
 Podfile.lock
 
-Podfile.lock
-Pods/
-
 ## Various settings
 *.pbxuser
 !default.pbxuser
