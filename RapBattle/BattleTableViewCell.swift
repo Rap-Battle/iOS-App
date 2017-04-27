@@ -117,6 +117,11 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         super.awakeFromNib()
         // Initialization code
         playingProgressView.progress = 0.0
+        userImageView.layer.borderWidth = 1
+        userImageView.layer.masksToBounds = false
+        userImageView.layer.borderColor = UIColor.white.cgColor
+        userImageView.layer.cornerRadius = userImageView.frame.height/2
+        userImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

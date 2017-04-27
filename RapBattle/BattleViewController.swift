@@ -41,6 +41,13 @@ class BattleViewController: UIViewController, UITableViewDataSource {
                 self.childRapsTableView.reloadData()
             }
         }
+        //playingProgressView.progress = 0.0
+        
+        rootBattleProfileImage.layer.borderWidth = 1
+        rootBattleProfileImage.layer.masksToBounds = false
+        rootBattleProfileImage.layer.borderColor = UIColor.white.cgColor
+        rootBattleProfileImage.layer.cornerRadius = rootBattleProfileImage.frame.height/2
+        rootBattleProfileImage.clipsToBounds = true
         
     }
 
