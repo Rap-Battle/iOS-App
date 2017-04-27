@@ -84,10 +84,16 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         super.viewDidLoad()
         
         //Set image as title
-        let titleImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 0,height: 15))
+        
+        let titleImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 0,height: 20))
         titleImageView.contentMode = .scaleAspectFit
-        titleImageView.image = UIImage(named: "RAPBATTLE")
-        self.navigationItem.titleView = titleImageView
+        titleImageView.image = UIImage(named: "logo")
+        
+        //Commented out becuase center align probtlems. Will fix later
+        //self.navigationItem.titleView = titleImageView
+        
+        
+   //     self.navigationItem.titleView.
         //Done
         
         recordButton.isEnabled = false

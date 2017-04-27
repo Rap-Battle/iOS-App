@@ -13,7 +13,7 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RapBattle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RapBattle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,10 +24,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5Rm-Cd-sgW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-IQ-zA6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZB-Km-aC3">
@@ -79,6 +75,10 @@
                                     <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jes-Uo-aS0"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-IQ-zA6">
+                                <rect key="frame" x="19" y="28" width="337" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.23541602556984992" green="0.035277201789361216" blue="0.41723898887634281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -212,6 +212,11 @@
                         <color key="backgroundColor" red="0.28421175479888916" green="0.32565832138061523" blue="0.49569272994995117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qr1-ID-60x">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gCp-zQ-WGc">
+                            <connections>
+                                <action selector="didTapLougout:" destination="K2h-sy-H1x" id="tAY-m6-rJj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="JGW-qU-97F">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -307,6 +312,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bZm-1g-yVC"/>
                     <connections>
                         <outlet property="circleAnimate" destination="LDI-ar-Hqi" id="iZU-O3-RPZ"/>
                         <outlet property="circleAnimate1" destination="iuR-fR-sxF" id="VPd-8u-Y8R"/>
@@ -343,12 +349,12 @@
     <resources>
         <image name="background" width="396" height="654"/>
         <image name="battle" width="231" height="87"/>
-        <image name="logo" width="605" height="210"/>
+        <image name="logo" width="496" height="88"/>
         <image name="play_btn" width="231" height="87"/>
         <image name="post_btn" width="231" height="87"/>
         <image name="record-start" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mjg-fy-QrA"/>
+        <segue reference="Wxi-mm-gmc"/>
     </inferredMetricsTieBreakers>
 </document>

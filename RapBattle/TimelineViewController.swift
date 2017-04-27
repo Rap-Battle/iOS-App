@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 protocol BattleToRecordDelegate {
     func toRecord(battle: Battle)
@@ -24,6 +25,13 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Table View
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return battles.count
+    }
+    @IBAction func didTapLougout(_ sender: UIBarButtonItem) {
+        try! FIRAuth.auth()!.signOut()
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,9 +50,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         battlesTableView.dataSource = self
         battlesTableView.delegate = self
-        let titleImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 0,height: 15))
+        let titleImageView = UIImageView(frame: CGRect(x: 0,y: 0,width: 0,height: 20))
         titleImageView.contentMode = .scaleAspectFit
-        titleImageView.image = UIImage(named: "RAPBATTLE")
+        titleImageView.image = UIImage(named: "logo")
         self.navigationItem.titleView = titleImageView
         
         // Get json of battles from firebase
