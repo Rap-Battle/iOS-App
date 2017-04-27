@@ -35,7 +35,10 @@ class User {
         name = json?["name"] as? String
     }
     func getAsDictionary() -> Dictionary<String, Any> {
-        return ["email": self.email!,
-                "name" : self.name!]
+        if let name = self.name {
+            return ["email": self.email!,
+                    "name" : name]
+        }
+        return ["email": self.email!]
     }
 }

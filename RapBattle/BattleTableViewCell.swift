@@ -15,6 +15,8 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     var audioPlayer: AVAudioPlayer!
     var delegate: BattleToRecordDelegate?
     
+    var isChild = false
+    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -22,6 +24,7 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         delegate?.toRecord(battle: battle!)
     }
     
+    @IBOutlet weak var respondsToText: UILabel!
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var playingSliderView: UISlider!
     

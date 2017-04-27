@@ -83,7 +83,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         if let battleViewController = segue.destination as? BattleViewController {
             if let cell = sender as? BattleTableViewCell {
-                battleViewController.battle = cell.battle
+                battleViewController.rootBattle = cell.battle
             }
         }
     }
