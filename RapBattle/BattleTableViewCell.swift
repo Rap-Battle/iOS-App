@@ -27,7 +27,7 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     }
     @IBOutlet weak var respondsToText: UILabel!
     @IBOutlet weak var remainingTimeLabel: UILabel!
-    @IBOutlet weak var playingSliderView: UISlider!
+    @IBOutlet weak var playingProgressView: UIProgressView!
     
     @IBAction func onPlay(_ sender: UIButton) {
         do {
@@ -37,11 +37,31 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
             self.audioPlayer!.prepareToPlay()
             self.audioPlayer!.play()
             print("playing")
+            
+            //Progress view
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
+            
         } catch let error as NSError {
             print("audioPlayer error: \(error.localizedDescription)")
         }
         
     }
+    
+    func updateAudioProgressView()
+    {
+        if audioPlayer.isPlaying
+        {
+            // Update progress
+            playingProgressView.setProgress(Float(audioPlayer.currentTime/audioPlayer.duration), animated: true)
+            remainingTimeLabel.text = "\(Float(audioPlayer.currentTime/audioPlayer.duration))"
+            print("TIME: \(Float(audioPlayer.currentTime/audioPlayer.duration))")
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playingProgressView.progress = 0.0
+    }
+    
     @IBAction func onReplyToBattle(_ sender: Any) {
     }
 
@@ -67,6 +87,7 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        playingProgressView.progress = 0.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
