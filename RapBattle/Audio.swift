@@ -61,13 +61,15 @@ class Audio {
         return voters.count
     }
 
-    func addVoter(user: User) {
+    func addVoter(user: User) -> Bool {
         for voter in voters {
             if (voter == user.email) {
-                return
+                CRNotifications.showNotification(type: .error, title: "Already voted!", message: "You cannot vote twice on a cypher!", dismissDelay: 3)
+                return false
             }
         }
         voters.append(user.email!)
+        return true
     }
     
     func download(completion: @escaping () -> (), failure: @escaping (Error) -> ()){
