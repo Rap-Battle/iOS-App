@@ -16,15 +16,25 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     var localUrlToPlay: URL?
     var audioPlayer: AVAudioPlayer!
     var delegate: BattleToRecordDelegate?
+    var audioDelegate: AudioDelegate?
     
     var isChild = false
     
+    @IBOutlet weak var numVotes: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBAction func onBattle(_ sender: UIButton) {
         delegate?.toRecord(battle: battle!)
     }
+    
+    @IBAction func upvoteButtonPressed(_ sender: Any) {
+        battle?.cyphers[0]?.addVoter(user: User.currentUser)
+        // audioDelegate?.upvoteAudio(audio: (battle?.cyphers[0])!)
+        FirebaseClient.currentDB.updateBattle(battle: battle!)
+        print("upvoted cypherID")
+    }
+    
     @IBOutlet weak var respondsToText: UILabel!
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var playingProgressView: UIProgressView!

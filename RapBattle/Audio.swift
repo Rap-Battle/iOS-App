@@ -16,6 +16,7 @@ class Audio {
     var audioID: String?             // A unique ID for this file
     var user: User?                // User that created this file
     var createdAt: Date?             // Timestamp
+    var voters: [String] = []
     
     convenience init(localAudioURL: URL, user: User) {
         self.init()
@@ -37,6 +38,11 @@ class Audio {
         }
         
         user = User(json: json["recorder"] as? NSDictionary)
+        if (json["voters"] == nil) {
+            voters = []
+        } else {
+            voters = (json["voters"] as? [String])!
+        }
         
     }
     func getLocalAudioURL(completion: @escaping (URL) -> (), failure: @escaping (Error) -> ()) {
@@ -50,6 +56,20 @@ class Audio {
             completion(self.localAudioURL!)
         }
     }
+    
+    func getNumVotes() -> Int {
+        return voters.count
+    }
+
+    func addVoter(user: User) {
+        for voter in voters {
+            if (voter == user.email) {
+                return
+            }
+        }
+        voters.append(user.email!)
+    }
+    
     func download(completion: @escaping () -> (), failure: @escaping (Error) -> ()){
         FirebaseClient.currentDB.downloadAudioFiles(file: self, completion: { (localUrl: URL) in
             self.localAudioURL = localUrl
@@ -61,6 +81,7 @@ class Audio {
     func getAsDictionary() -> [String: Any] {
         return ["firebaseFileName"  : firebaseFileName!,
                 "audioID"           : audioID!,
-                "recorder"            : user!.getAsDictionary()]
+                "recorder"          : user!.getAsDictionary(),
+                "voters"            : voters]
     }
 }

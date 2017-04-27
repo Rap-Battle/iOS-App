@@ -29,6 +29,10 @@ class FirebaseClient {
         return battle
     }
     
+    func updateBattle(battle: Battle) {
+        battleFirebaseReference.child(battle.battleID!).setValue(battle.getAsDictionary())
+    }
+    
     func createNewAudioFileOnFirebase(with localAudioFilePath: URL) -> Audio {
         let audioFile = Audio(localAudioURL: localAudioFilePath, user: User.currentUser)
         rapAudioStorageReference.child("\(audioFile.firebaseFileName!)").putFile(localAudioFilePath, metadata: nil) { (metadata, error) in
