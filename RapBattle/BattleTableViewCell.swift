@@ -26,7 +26,6 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         delegate?.toRecord(battle: battle!)
     }
     @IBOutlet weak var respondsToText: UILabel!
-    @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var playingProgressView: UIProgressView!
     
     @IBAction func onPlay(_ sender: UIButton) {
@@ -54,8 +53,6 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         {
             // Update progress
             playingProgressView.setProgress(Float(audioPlayer.currentTime/audioPlayer.duration), animated: true)
-            remainingTimeLabel.text = "\(Float(audioPlayer.currentTime/audioPlayer.duration))"
-            print("TIME: \(Float(audioPlayer.currentTime/audioPlayer.duration))")
         }
     }
     
