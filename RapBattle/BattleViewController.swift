@@ -17,11 +17,8 @@ class BattleViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var rootBattleProfileImage: UIImageView!
     
     @IBOutlet weak var rootUsername: UILabel!
-    @IBOutlet weak var rootRemainingTime: UILabel!
-    @IBAction func rootonPlayButton(_ sender: UIButton) {
-    }
 
-    @IBOutlet weak var rootSlider: UISlider!
+
     
     
     override func viewDidLoad() {
