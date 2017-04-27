@@ -25,7 +25,6 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     @IBAction func onBattle(_ sender: UIButton) {
         delegate?.toRecord(battle: battle!)
     }
-    
     @IBOutlet weak var respondsToText: UILabel!
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var playingSliderView: UISlider!

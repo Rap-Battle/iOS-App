@@ -284,7 +284,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="battle"/>
                                         <connections>
-                                            <action selector="onBattleButton:" destination="cNq-hA-qdG" eventType="touchUpInside" id="3Xh-Da-FR9"/>
+                                            <segue destination="HmI-22-7Fw" kind="presentation" identifier="ReplySegueInBVC" id="u9I-dL-13q"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -526,6 +526,6 @@
         <image name="record-start" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wxi-mm-gmc"/>
+        <segue reference="u9I-dL-13q"/>
     </inferredMetricsTieBreakers>
 </document>

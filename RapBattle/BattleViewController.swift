@@ -20,8 +20,7 @@ class BattleViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var rootRemainingTime: UILabel!
     @IBAction func rootonPlayButton(_ sender: UIButton) {
     }
-    @IBAction func onBattleButton(_ sender: UIButton) {
-    }
+
     @IBOutlet weak var rootSlider: UISlider!
     
     
@@ -29,11 +28,11 @@ class BattleViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         childRapsTableView.dataSource = self
         // Do any additional setup after loading the view.
-        
+        rootUsername.text = rootBattle?.organizer?.getName()
         FirebaseClient.currentDB.bindSpecificBattle(rootBattle: rootBattle!) { (battle: NSDictionary) in
             if let fetchedAudios = battle["cyphers"] as? NSDictionary {
                 var newArray = [Audio]()
-                for (audioId, audio) in fetchedAudios {
+                for (_, audio) in fetchedAudios {
                     let oneAudio = Audio(json: audio as! NSDictionary)
                     newArray.append(oneAudio)
                 }
@@ -54,22 +53,32 @@ class BattleViewController: UIViewController, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        var cell = childRapsTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
+        let cell = childRapsTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
         
         cell.initializeWith(audio: childAudios[indexPath.row], rootBattle: rootBattle!)
         cell.isChild = true
         
         return cell
     }
+    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        childRapsTableView.deselectRow(at: indexPath, animated: true)
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "ReplySegueInBVC" {
+                let vc = segue.destination as! RecordViewController
+                vc.battleRepliedTo = rootBattle!
+                return
+            }
+        }
     }
-    */
+ 
 
 }

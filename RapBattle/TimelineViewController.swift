@@ -44,6 +44,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = battlesTableView.cellForRow(at: indexPath)
         performSegue(withIdentifier: "BattleViewControllerSegue", sender: cell)
+        battlesTableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func viewDidLoad() {
@@ -67,6 +68,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
     }
+
     
     // MARK: - Navigation
 
