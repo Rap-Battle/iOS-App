@@ -44,8 +44,9 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         } catch let error as NSError {
             print("audioPlayer error: \(error.localizedDescription)")
         }
-        
     }
+    
+    
     
     func updateAudioProgressView()
     {
