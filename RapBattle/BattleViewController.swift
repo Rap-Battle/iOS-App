@@ -10,7 +10,7 @@ import UIKit
 
 class BattleViewController: UIViewController, UITableViewDataSource {
     var rootBattle: Battle?
-    var childBattles: [Battle] = []
+    var childAudios: [Audio] = []
 
     @IBOutlet weak var childRapsTableView: UITableView!
     //top battle:
@@ -30,6 +30,19 @@ class BattleViewController: UIViewController, UITableViewDataSource {
         childRapsTableView.dataSource = self
         // Do any additional setup after loading the view.
         
+        FirebaseClient.currentDB.bindSpecificBattle(rootBattle: rootBattle!) { (battle: NSDictionary) in
+            if let fetchedAudios = battle["cyphers"] as? NSDictionary {
+                var newArray = [Audio]()
+                for (audioId, audio) in fetchedAudios {
+                    let oneAudio = Audio(json: audio as! NSDictionary)
+                    newArray.append(oneAudio)
+                }
+                newArray.remove(at: 0)
+                self.childAudios = newArray
+                self.childRapsTableView.reloadData()
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,13 +50,13 @@ class BattleViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return childBattles.count
+        return childAudios.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell = childRapsTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
         
-        cell.initializeWith(battle: childBattles[indexPath.row])
+        cell.initializeWith(audio: childAudios[indexPath.row], rootBattle: rootBattle!)
         cell.isChild = true
         
         return cell

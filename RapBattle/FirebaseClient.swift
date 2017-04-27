@@ -47,6 +47,13 @@ class FirebaseClient {
         })
     }
     
+    func bindSpecificBattle(rootBattle: Battle, observer: @escaping (_ battle: NSDictionary) -> Void) {
+        
+        battleFirebaseReference.child(rootBattle.battleID!).observe(FIRDataEventType.value, with: { (snapshot) in
+            observer(snapshot.value as? NSDictionary ?? [:])
+        })
+    }
+    
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]

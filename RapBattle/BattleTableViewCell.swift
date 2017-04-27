@@ -11,7 +11,9 @@ import AVFoundation
 
 class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     var battle: Battle?
+    var audio: Audio?
     
+    var localUrlToPlay: URL?
     var audioPlayer: AVAudioPlayer!
     var delegate: BattleToRecordDelegate?
     
@@ -29,21 +31,16 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     @IBOutlet weak var playingSliderView: UISlider!
     
     @IBAction func onPlay(_ sender: UIButton) {
-        let audio = battle!.cyphers[0]!
-        audio.getLocalAudioURL(completion: { (localUrl: URL) in
-            do {
-                self.audioPlayer = try AVAudioPlayer(contentsOf:
-                    (localUrl))
-                self.audioPlayer.delegate = self
-                self.audioPlayer!.prepareToPlay()
-                self.audioPlayer!.play()
-                print("playing")
-            } catch let error as NSError {
-                print("audioPlayer error: \(error.localizedDescription)")
-            }
-        }, failure: { (error: Error) in
+        do {
+            self.audioPlayer = try AVAudioPlayer(contentsOf:
+                localUrlToPlay!)
+            self.audioPlayer.delegate = self
+            self.audioPlayer!.prepareToPlay()
+            self.audioPlayer!.play()
+            print("playing")
+        } catch let error as NSError {
             print("audioPlayer error: \(error.localizedDescription)")
-        })
+        }
         
     }
     @IBAction func onReplyToBattle(_ sender: Any) {
@@ -52,6 +49,21 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     func initializeWith(battle: Battle){
         self.battle = battle
         usernameLabel.text = battle.organizer!.getName()
+        battle.cyphers[0]!.getLocalAudioURL(completion: { (localUrl: URL) in
+            self.localUrlToPlay = localUrl
+        }, failure: { (error: Error) in
+            print("audioPlayer error: \(error.localizedDescription)")
+        })
+    }
+    func initializeWith(audio: Audio, rootBattle: Battle){
+        self.audio = audio
+        usernameLabel.text = audio.user!.getName()
+        respondsToText.text = "responds to " + (rootBattle.organizer?.getName())!
+        audio.getLocalAudioURL(completion: { (localUrl: URL) in
+            self.localUrlToPlay = localUrl
+        }, failure: { (error: Error) in
+            print("audioPlayer error: \(error.localizedDescription)")
+        })
     }
     override func awakeFromNib() {
         super.awakeFromNib()
