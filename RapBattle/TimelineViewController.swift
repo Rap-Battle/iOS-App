@@ -13,13 +13,18 @@ import FirebaseAuth
 protocol BattleToRecordDelegate {
     func toRecord(battle: Battle)
 }
-
-class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BattleToRecordDelegate {
+protocol AudioDelegate {
+        func upvoteAudio(audio: Audio)
+    }
+class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BattleToRecordDelegate, AudioDelegate {
     func toRecord(battle: Battle) {
         performSegue(withIdentifier: "ReplySegue", sender: battle)
     }
 
     @IBOutlet weak var battlesTableView: UITableView!
+    func upvoteAudio(audio: Audio) {
+                audio.addVoter(user: User.currentUser)
+            }
     
     var battles: [Battle] = []
     // MARK: - Table View
@@ -37,6 +42,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = battlesTableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
         cell.initializeWith(battle: battles[indexPath.row])
+        cell.numVotes.text = "\((battles[indexPath.row].cyphers[0]?.getNumVotes())!)"
         cell.delegate = self
         return cell
     }

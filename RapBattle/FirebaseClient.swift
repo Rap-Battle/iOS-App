@@ -21,7 +21,9 @@ class FirebaseClient {
         let userName = User.currentUser.getName()
         usersFirebaseReference.child(userId).child("name").setValue(userName)
     }
-    
+    func updateBattle(battle: Battle) {
+                battleFirebaseReference.child(battle.battleID!).setValue(battle.getAsDictionary())
+            }
     func createNewReply(with audioFile: Audio, battleRepliedTo: Battle?) -> Battle {
         let battle = battleRepliedTo ?? Battle()
         battle.addCyperToBattle(new: audioFile)

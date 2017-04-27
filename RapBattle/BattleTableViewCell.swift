@@ -11,13 +11,42 @@ import AVFoundation
 
 class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     var battle: Battle?
+    
     var audio: Audio?
+    var rootBattle: Battle?
     
     var localUrlToPlay: URL?
     var audioPlayer: AVAudioPlayer!
     var delegate: BattleToRecordDelegate?
+    var audioDelegate: AudioDelegate?
     
     var isChild = false
+    @IBOutlet weak var numVotes: UILabel!
+
+    @IBAction func _upVoteButtonPressed(_ sender: UIButton) {
+        upVoteButtonPressed(sender)
+    }
+
+    @IBAction func upVoteButtonPressed(_ sender: UIButton) {
+        if isChild {
+            for audioInArray in (rootBattle?.cyphers)!{
+                if audio!.audioID! == audioInArray!.audioID! {
+                    if (audioInArray!.addVoter(user: User.currentUser) == true) {
+                        FirebaseClient.currentDB.updateBattle(battle: rootBattle!)
+                        numVotes.text = "\(Int(numVotes.text!)! + 1)"
+                        print("upvoted cypherID")
+                    }
+                }
+            
+            }
+            
+        }
+        else if (battle?.cyphers[0]?.addVoter(user: User.currentUser) == true) {
+            FirebaseClient.currentDB.updateBattle(battle: battle!)
+            numVotes.text = "\(Int(numVotes.text!)! + 1)"
+            print("upvoted cypherID")
+        }
+    }
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -76,6 +105,8 @@ class BattleTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
         self.audio = audio
         usernameLabel.text = audio.user!.getName()
         respondsToText.text = "responds to " + (rootBattle.organizer?.getName())!
+        self.rootBattle = rootBattle
+        isChild = true
         audio.getLocalAudioURL(completion: { (localUrl: URL) in
             self.localUrlToPlay = localUrl
         }, failure: { (error: Error) in

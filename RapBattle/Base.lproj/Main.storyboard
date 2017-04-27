@@ -115,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vv7-R1-6Cb" id="xQx-po-IA5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZI-sW-aui">
@@ -129,6 +129,23 @@
                                                             <connections>
                                                                 <action selector="onBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="Xia-l8-27g"/>
                                                                 <action selector="onReplyToBattle:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="HZ9-cH-Ycv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-so-u41">
+                                                            <rect key="frame" x="241" y="45" width="11" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-e7-PB0">
+                                                            <rect key="frame" x="257" y="46" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" title="^"/>
+                                                            <connections>
+                                                                <action selector="upVoteButtonPressed:" destination="vv7-R1-6Cb" eventType="touchUpInside" id="6Dd-ey-5lk"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -173,6 +190,7 @@
                                             <color key="backgroundColor" red="0.28713777661323547" green="0.23727372288703918" blue="0.31991860270500183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="numVotes" destination="6qx-so-u41" id="3D6-pU-Fcb"/>
                                             <outlet property="playingProgressView" destination="fIe-1n-JGN" id="CA9-Dh-V0K"/>
                                             <outlet property="userImageView" destination="CdD-8p-4Vx" id="5jP-Ub-r5H"/>
                                             <outlet property="usernameLabel" destination="y5b-wj-oOS" id="0GU-oe-N3H"/>
@@ -204,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouo-G2-hZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="690"/>
+            <point key="canvasLocation" x="693.60000000000002" y="689.5052473763119"/>
         </scene>
         <!--Battle View Controller-->
         <scene sceneID="qv7-4Y-N7D">
@@ -274,7 +292,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIe-P4-eSb" id="dkO-iY-bWQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uO-Jh-tQJ">
@@ -286,6 +304,23 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji8-lL-5FU">
+                                                            <rect key="frame" x="241" y="8" width="11" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd6-Xf-fPw">
+                                                            <rect key="frame" x="257" y="9" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" title="^"/>
+                                                            <connections>
+                                                                <action selector="_upVoteButtonPressed:" destination="DIe-P4-eSb" eventType="touchUpInside" id="h48-Gs-lu3"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.28713777660000001" green="0.23727372290000001" blue="0.3199186027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <gestureRecognizers/>
@@ -347,6 +382,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="numVotes" destination="ji8-lL-5FU" id="tNo-7i-vOk"/>
                                             <outlet property="playingProgressView" destination="H5X-vV-H2h" id="AI4-7y-OR8"/>
                                             <outlet property="respondsToText" destination="4HN-fL-V8D" id="VX7-7s-J4d"/>
                                             <outlet property="userImageView" destination="xUe-Xw-xCM" id="LkB-R3-uM3"/>
@@ -483,6 +519,6 @@
         <image name="record-start" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wxi-mm-gmc"/>
+        <segue reference="u9I-dL-13q"/>
     </inferredMetricsTieBreakers>
 </document>
