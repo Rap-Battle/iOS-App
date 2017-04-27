@@ -284,7 +284,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="battle"/>
                                         <connections>
-                                            <segue destination="HmI-22-7Fw" kind="presentation" identifier="ReplySegueInBVC" id="u9I-dL-13q"/>
+                                            <segue destination="HmI-22-7Fw" kind="show" identifier="ReplySegueInBVC" id="u9I-dL-13q"/>
                                         </connections>
                                     </button>
                                 </subviews>
