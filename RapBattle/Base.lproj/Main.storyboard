@@ -150,13 +150,6 @@
                                                     <rect key="frame" x="8" y="86" width="359" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKt-aj-6mW">
-                                                            <rect key="frame" x="328" y="11" width="27" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIe-1n-JGN">
                                                             <rect key="frame" x="45" y="17" width="258" height="2"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -181,7 +174,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="playingProgressView" destination="fIe-1n-JGN" id="CA9-Dh-V0K"/>
-                                            <outlet property="remainingTimeLabel" destination="PKt-aj-6mW" id="Kam-0H-dCe"/>
                                             <outlet property="userImageView" destination="CdD-8p-4Vx" id="5jP-Ub-r5H"/>
                                             <outlet property="usernameLabel" destination="y5b-wj-oOS" id="0GU-oe-N3H"/>
                                         </connections>
@@ -322,13 +314,6 @@
                                                     <rect key="frame" x="0.0" y="87" width="375" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-SM-3eg">
-                                                            <rect key="frame" x="328" y="11" width="27" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H5X-vV-H2h">
                                                             <rect key="frame" x="45" y="17" width="258" height="2"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -363,7 +348,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="playingProgressView" destination="H5X-vV-H2h" id="AI4-7y-OR8"/>
-                                            <outlet property="remainingTimeLabel" destination="ODa-SM-3eg" id="hnk-fS-9UB"/>
                                             <outlet property="respondsToText" destination="4HN-fL-V8D" id="VX7-7s-J4d"/>
                                             <outlet property="userImageView" destination="xUe-Xw-xCM" id="LkB-R3-uM3"/>
                                             <outlet property="usernameLabel" destination="fSv-Yl-qZf" id="VxY-Rs-unc"/>
@@ -499,6 +483,6 @@
         <image name="record-start" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u9I-dL-13q"/>
+        <segue reference="Wxi-mm-gmc"/>
     </inferredMetricsTieBreakers>
 </document>
